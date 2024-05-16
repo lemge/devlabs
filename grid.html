@@ -1,0 +1,129 @@
+<!--
+ * @Description: 
+ * @Date: 2024-05-15 22:30:23
+ * @LastEditors: lec
+ * @LastEditTime: 2024-05-16 12:14:50
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <title>栅格系统</title>
+    <link rel="stylesheet" href="css/formt.css">
+    <link rel="stylesheet" href="css/grid.css">
+</head>
+
+<body>
+    <div class="text-center">
+        <h1 class="text-center">栅格系统</h1>
+    </div>
+    <div>
+        <h2 class="text-center">容器container</h2>
+        <hr>
+        <div>
+            <div class="container container-full">container-full.设定宽度为100%</div>
+        </div>
+        <hr>
+        <div>
+            <div class="container">container.最大宽度为1200px</div>
+        </div>
+        <hr>
+        <div>
+            <div class="container container-md">container-md.最大宽度为960px</div>
+        </div>
+        <hr>
+        <div>
+            <div class="container container-sm">container-sm.最大宽度为720px</div>
+        </div>
+        <hr>
+        <div>
+            <div class="container container-xs">
+                container-xs.最大宽度为480px
+            </div>
+        </div>
+        <hr>
+        <div>
+            <div class="container container-md" style="background-color: aqua;">
+                <div class="container container-xs">
+                    container嵌套，在container-md中嵌套container-xs
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div>
+        <h2 class="text-center">列col</h2>
+        <div class="row">
+            <div class="col-1 testgridbox">col-1</div>
+            <div class="col-2 testgridbox">col-2</div>
+            <div class="col-3 testgridbox">col-3</div>
+            <div class="col-4 testgridbox">col-4</div>
+            <div class="col-5 testgridbox">col-5</div>
+            <div class="col-6 testgridbox">col-6</div>
+            <div class="col-7 testgridbox">col-7</div>
+            <div class="col-8 testgridbox">col-8</div>
+            <div class="col-9 testgridbox">col-9</div>
+            <div class="col-10 testgridbox">col-10</div>
+            <div class="col-11 testgridbox">col-11</div>
+            <div class="col-12 testgridbox">col-12</div>
+            <div class="col-13 testgridbox">col-13</div>
+            <div class="col-14 testgridbox">col-14</div>
+            <div class="col-15 testgridbox">col-15</div>
+            <div class="col-16 testgridbox">col-16</div>
+            <div class="col-17 testgridbox">col-17</div>
+            <div class="col-18 testgridbox">col-18</div>
+            <div class="col-19 testgridbox">col-19</div>
+            <div class="col-20 testgridbox">col-20</div>
+            <div class="col-21 testgridbox">col-21</div>
+            <div class="col-22 testgridbox">col-22</div>
+            <div class="col-23 testgridbox">col-23</div>
+            <div class="col-24 testgridbox">col-24</div>
+
+        </div>
+
+    </div>
+    <div>
+        <h2 class="text-center">响应式，媒体查询分界点768px</h2>
+        <div class="row">
+            <div class="col-12 col-md-6 testgridbox">col-12 col-md-6</div>
+            <div class="col-12 col-md-6 testgridbox">col-12 col-md-6</div>
+            <div class="col-12 col-md-4 testgridbox">col-12 col-md-4</div>
+            <div class="col-12 col-md-8 testgridbox">col-12 col-md-8</div>
+            <div class="col-12 col-md-3 testgridbox">col-12 col-md-3</div>
+            <div class="col-12 col-md-9 testgridbox">col-12 col-md-9</div>
+            <div class="col-12 col-md-2 testgridbox">col-12 col-md-2</div>
+            <div class="col-12 col-md-10 testgridbox">col-12 col-md-10</div>
+            <div class="col-12 col-md-1 testgridbox">col-12 col-md-1</div>
+        </div>
+    </div>
+
+    <div>
+        <h2 class="text-center">响应式可见性</h2>
+        <div>
+            <div class="hide show-md  testgridbox">这个div只在大于768px屏幕端可见</div>
+            <div class="hide-md testgridbox">这个div只在小于768px屏幕端可见</div>
+        </div>
+    </div>
+
+</body>
+<style>
+    .row {
+        background-color: #fef3c7;
+    }
+
+    .testgridbox {
+        background-color: #dbeafe;
+        height: 20px;
+        border: 1px solid #1e40af;
+    }
+    .container {
+        background-color: #fef3c7;
+    }
+    .container-full {
+        background-color: #dbeafe;
+    }
+</style>
+
+</html>

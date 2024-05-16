@@ -1,0 +1,114 @@
+// This file is used to format the HTML elements in the webpage.
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+//设置h1,h2,h3,h4,h5,h6
+h1,h2,h3,h4,h5,h6{
+    font-weight: bold;
+    margin: 10px 0;
+}
+//设置移动端的字体大小
+    h1{
+        font-size: 1.5em;
+    }
+    h2{
+        font-size: 1.2em;
+    }
+    h3{
+        font-size: 1em;
+    }
+    h4{
+        font-size: 0.8em;
+    }
+    h5{
+        font-size: 0.6em;
+    }
+    h6{
+        font-size: 0.4em;
+    }
+
+//重新定义hr样式
+hr{
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 10px 0;
+}
+//文字居中
+.text-center{
+    text-align: center;
+}
+//文字靠右
+.text-right{
+    text-align: right;
+}
+//文字靠左
+.text-left{
+    text-align: left;
+}
+//清除浮动
+.clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+//隐藏元素
+.hide{
+    display: none;
+}
+//块级元素
+.block{
+    display: block;
+}
+//内联元素
+.inline{
+    display: inline;
+}
+//内联块元素
+.inline-block{
+    display: inline-block;
+}
+//字体颜色
+.color-red{
+    color: red;
+}
+.color-green{
+    color: green;
+}
+.color-blue{
+    color: blue;
+}
+.color-black{
+    color: black;
+}
+
+//媒体查询响应式布局 电脑端
+@media all and (min-width: 768px) {
+    h1{
+        font-size: 2em;
+    }
+    h2{
+        font-size: 1.5em;
+    }
+    h3{
+        font-size: 1.2em;
+    }
+    h4{
+        font-size: 1em;
+    }
+    h5{
+        font-size: 0.8em;
+    }
+    h6{
+        font-size: 0.6em;
+    
+    }
+    .hide-md{
+        display: none;
+    }
+    .show-md{
+        display: block;
+    }
+
+}
