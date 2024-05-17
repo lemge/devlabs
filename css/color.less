@@ -1,0 +1,113 @@
+//色彩定义
+
+@dl-red-0: rgb(254, 242, 242);
+@dl-red-1: rgb(254, 226, 226);
+@dl-red-2: rgb(254, 202, 202);
+@dl-red-3: rgb(252, 165, 165);
+@dl-red-4: rgb(248, 113, 113);
+@dl-red-5: rgb(239, 68, 68);
+@dl-red-6: rgb(220, 38, 38);
+@dl-red-7: rgb(185, 28, 28);
+@dl-red-8: rgb(153, 27, 27);
+@dl-red-9: rgb(127, 29, 29);
+
+@dl-yellow-0: rgb(255, 251, 235);
+@dl-yellow-1: rgb(254, 243, 199);
+@dl-yellow-2: rgb(253, 230, 138);
+@dl-yellow-3: rgb(252, 211, 77);
+@dl-yellow-4: rgb(251, 191, 36);
+@dl-yellow-5: rgb(245, 158, 11);
+@dl-yellow-6: rgb(217, 119, 6);
+@dl-yellow-7: rgb(180, 83, 9);
+@dl-yellow-8: rgb(146, 64, 14);
+@dl-yellow-9: rgb(120, 53, 15);
+
+@dl-green-0: rgb(236, 253, 245);
+@dl-green-1: rgb(209, 250, 229);
+@dl-green-2: rgb(167, 243, 208);
+@dl-green-3: rgb(110, 231, 183);
+@dl-green-4: rgb(52, 211, 153);
+@dl-green-5: rgb(16, 185, 129);
+@dl-green-6: rgb(5, 150, 105);
+@dl-green-7: rgb(4, 120, 87);
+@dl-green-8: rgb(6, 95, 70);
+@dl-green-9: rgb(6, 78, 59);
+
+@dl-blue-0: rgb(239, 246, 255);
+@dl-blue-1: rgb(219, 234, 254);
+@dl-blue-2: rgb(191, 219, 254);
+@dl-blue-3: rgb(147, 197, 253);
+@dl-blue-4: rgb(96, 165, 250);
+@dl-blue-5: rgb(59, 130, 246);
+@dl-blue-6: rgb(37, 99, 235);
+@dl-blue-7: rgb(29, 78, 216);
+@dl-blue-8: rgb(30, 64, 175);
+@dl-blue-9: rgb(30, 58, 138);
+
+@dl-purple-0: rgb(245, 243, 255);
+@dl-purple-1: rgb(237, 233, 254);
+@dl-purple-2: rgb(221, 214, 254);
+@dl-purple-3: rgb(196, 181, 253);
+@dl-purple-4: rgb(167, 139, 250);
+@dl-purple-5: rgb(139, 92, 246);
+@dl-purple-6: rgb(124, 58, 237);
+@dl-purple-7: rgb(109, 40, 217);
+@dl-purple-8: rgb(91, 33, 182);
+@dl-purple-9: rgb(76, 29, 149);
+
+@dl-pink-0: rgb(253, 242, 248);
+@dl-pink-1: rgb(252, 231, 243);
+@dl-pink-2: rgb(251, 207, 232);
+@dl-pink-3: rgb(249, 168, 212);
+@dl-pink-4: rgb(244, 114, 182);
+@dl-pink-5: rgb(236, 72, 153);
+@dl-pink-6: rgb(219, 39, 119);
+@dl-pink-7: rgb(190, 24, 93);
+@dl-pink-8: rgb(157, 23, 77);
+@dl-pink-9: rgb(131, 24, 67);
+
+@dl-gray-0: #fafafa;
+@dl-gray-1: #f4f4f5;
+@dl-gray-2: #e4e4e7;
+@dl-gray-3: #d4d4d8;
+@dl-gray-4: #a1a1aa;
+@dl-gray-5: #71717a;
+@dl-gray-6: #52525b;
+@dl-gray-7: #3f3f46;
+@dl-gray-8: #27272a;
+@dl-gray-9: #18181b;
+
+@white: #ffffff;
+@black: #000000;
+
+
+@colorset: red, yellow, green, blue, purple, pink, gray;
+
+each(@colorset,.(@v,@k,@i) {
+    each(range(0, 9), .(@vv,@kk,@ii){
+        @colorval:@{dl-@{v}-@{vv}};
+        .color-dl-@{v}-@{vv}{
+            color: @colorval;
+        }
+        .bg-dl-@{v}-@{vv}{
+            background-color: @colorval;
+        }
+    })
+    
+})
+
+.color-dl-white{
+    color: @white;
+}
+
+.bg-dl-white{
+    background-color: @white;
+}
+
+.color-dl-black{
+    color: @black;
+}
+
+.bg-dl-black{
+    background-color: @black;
+}
