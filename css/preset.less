@@ -1,45 +1,77 @@
+// This file is used to define some common styles for the website.
 @import "color";
 @import "format";
-.bg-box{
+
+.bg-box {
     background-color: @dl-gray-1;
 }
-.radius{
+
+.radius {
     border-radius: 4px;
 }
-.box-shadow{
+
+.box-shadow {
     box-shadow: 0 0 10px @dl-gray-2;
 }
 
-.dl-panel{
+.dl-panel {
     .radius;
     .box-shadow;
     .bg-dl-white;
     .margin-rl-20;
     border: 1px solid @dl-gray-2;
     margin-bottom: 20px;
-    .dl-panel-header{
+
+    .dl-panel-header {
         padding: 10px 15px;
         border-bottom: 1px solid @dl-gray-2;
         font-weight: bold;
     }
-    .dl-panel-body{
+
+    .dl-panel-body {
         padding: 10px 15px;
 
     }
-    .dl-panel-footer{
+
+    .dl-panel-footer {
         padding: 10px 15px;
         border-top: 1px solid @dl-gray-2;
     }
 }
 
-ul,ol{
+ul,
+ol {
     list-style-position: inside;
-    li{
-        *{
+
+    li {
+        * {
             display: contents;
         }
     }
 }
-.artical{
+
+.artical {
     line-height: 1.8rem;
+}
+
+.dl-table {
+    border-collapse: collapse;
+    width: 100%;
+
+    tr {
+        &:hover {
+            background-color: @dl-gray-1;
+        }
+    }
+
+    th {
+        background-color: @dl-gray-1;
+    }
+
+    th,
+    td {
+        border: 1px solid @dl-gray-2;
+        padding: 8px;
+        word-break: break-word;
+    }
 }

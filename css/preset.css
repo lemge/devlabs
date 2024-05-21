@@ -667,3 +667,19 @@ ol li * {
 .artical {
   line-height: 1.8rem;
 }
+.dl-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.dl-table tr:hover {
+  background-color: #f4f4f5;
+}
+.dl-table th {
+  background-color: #f4f4f5;
+}
+.dl-table th,
+.dl-table td {
+  border: 1px solid #e4e4e7;
+  padding: 8px;
+  word-break: break-word;
+}
