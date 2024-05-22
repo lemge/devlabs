@@ -1,0 +1,145 @@
+//this is the whole code of the component library
+//this file contains all the styles for the components
+//it is imported in the main.less file
+@import "preset";
+@import "color";
+
+
+.dl-panel {
+    .radius;
+    .box-shadow;
+    .bg-dl-white;
+    .margin-rl-20;
+    border: 1px solid @dl-gray-2;
+    margin-bottom: 20px;
+
+    .dl-panel-header {
+        padding: 10px 15px;
+        border-bottom: 1px solid @dl-gray-2;
+        font-weight: bold;
+        font-size: 1.1rem;
+    }
+
+    .dl-panel-body {
+        padding: 10px 15px;
+
+    }
+
+    .dl-panel-footer {
+        padding: 10px 15px;
+        border-top: 1px solid @dl-gray-2;
+    }
+}
+.dl-panel-clean{
+    .dl-panel-header{
+        border: none;
+    }
+    .dl-panel-footer{
+        border: none;
+    }
+}
+
+ul,
+ol {
+    list-style-position: inside;
+
+    li {
+        * {
+            display: contents;
+        }
+    }
+}
+
+.artical {
+    line-height: 1.8rem;
+}
+
+.dl-table {
+    border-collapse: collapse;
+    width: 100%;
+
+    tr {
+        &:hover {
+            background-color: @dl-gray-1;
+        }
+    }
+
+    th {
+        background-color: @dl-gray-1;
+    }
+
+    th,
+    td {
+        border: 1px solid @dl-gray-2;
+        padding: 8px;
+        word-break: break-word;
+    }
+}
+
+//the buttons styles
+.dl-btn {
+    cursor: pointer;
+    .radius;
+    padding: 10px 20px;
+    margin: 10px;
+    border: 1px solid @dl-gray-3;
+    background-color: @dl-gray-2;
+    &:hover{
+        background-color: @dl-gray-1;
+        .box-shadow;
+    }
+}
+.dl-btn-blue{
+    color: @white;
+    border: 1px solid @dl-blue-7;
+    background-color: @dl-blue-6;
+    &:hover{
+        background-color: @dl-blue-5;
+    }
+}
+.dl-btn-red{
+    color: @white;
+    border: 1px solid @dl-red-7;
+    background-color: @dl-red-6;
+    &:hover{
+        background-color: @dl-red-5;
+    }
+}
+.dl-btn-green{
+    color: @white;
+    border: 1px solid @dl-green-7;
+    background-color: @dl-green-6;
+    &:hover{
+        background-color: @dl-green-5;
+    }
+}
+.dl-btn-yellow{
+    color: @white;
+    border: 1px solid @dl-yellow-6;
+    background-color: @dl-yellow-5;
+    &:hover{
+        background-color: @dl-yellow-4;
+    }
+}
+
+.dl-btn-purple{
+    color: @white;
+    border: 1px solid @dl-purple-7;
+    background-color: @dl-purple-6;
+    &:hover{
+        background-color: @dl-purple-5;
+    }
+}
+
+.dl-btn-pink{
+
+    color: @white;
+    border: 1px solid @dl-pink-7;
+    background-color: @dl-pink-6;
+    &:hover{
+        background-color: @dl-pink-5;
+    }
+}
+.dl-btn-outline{
+    
+}

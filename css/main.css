@@ -969,6 +969,7 @@ hr {
   padding: 10px 15px;
   border-bottom: 1px solid #e4e4e7;
   font-weight: bold;
+  font-size: 1.1rem;
 }
 .dl-panel .dl-panel-body {
   padding: 10px 15px;
@@ -976,6 +977,12 @@ hr {
 .dl-panel .dl-panel-footer {
   padding: 10px 15px;
   border-top: 1px solid #e4e4e7;
+}
+.dl-panel-clean .dl-panel-header {
+  border: none;
+}
+.dl-panel-clean .dl-panel-footer {
+  border: none;
 }
 ul,
 ol {
@@ -1003,4 +1010,64 @@ ol li * {
   border: 1px solid #e4e4e7;
   padding: 8px;
   word-break: break-word;
+}
+.dl-btn {
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 10px 20px;
+  margin: 10px;
+  border: 1px solid #d4d4d8;
+  background-color: #e4e4e7;
+}
+.dl-btn:hover {
+  background-color: #f4f4f5;
+  box-shadow: 0 0 10px #e4e4e7;
+}
+.dl-btn-blue {
+  color: #ffffff;
+  border: 1px solid #1d4ed8;
+  background-color: #2563eb;
+}
+.dl-btn-blue:hover {
+  background-color: #3b82f6;
+}
+.dl-btn-red {
+  color: #ffffff;
+  border: 1px solid #b91c1c;
+  background-color: #dc2626;
+}
+.dl-btn-red:hover {
+  background-color: #ef4444;
+}
+.dl-btn-green {
+  color: #ffffff;
+  border: 1px solid #047857;
+  background-color: #059669;
+}
+.dl-btn-green:hover {
+  background-color: #10b981;
+}
+.dl-btn-yellow {
+  color: #ffffff;
+  border: 1px solid #d97706;
+  background-color: #f59e0b;
+}
+.dl-btn-yellow:hover {
+  background-color: #fbbf24;
+}
+.dl-btn-purple {
+  color: #ffffff;
+  border: 1px solid #6d28d9;
+  background-color: #7c3aed;
+}
+.dl-btn-purple:hover {
+  background-color: #8b5cf6;
+}
+.dl-btn-pink {
+  color: #ffffff;
+  border: 1px solid #be185d;
+  background-color: #db2777;
+}
+.dl-btn-pink:hover {
+  background-color: #ec4899;
 }
