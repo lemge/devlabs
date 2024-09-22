@@ -96,6 +96,7 @@ ol {
     &:hover{
         background-color: @dl-blue-5;
     }
+  
 }
 .dl-btn-red{
     color: @white;
@@ -140,6 +141,24 @@ ol {
         background-color: @dl-pink-5;
     }
 }
+
+.dl-btn-blue,
+.dl-btn-red,
+.dl-btn-green,
+.dl-btn-yellow,
+.dl-btn-purple,
+.dl-btn-pink{
+    &:disabled{
+        border-color: @dl-gray-3;
+        background-color: @dl-gray-2;
+        color: @dl-gray-5;
+        cursor: not-allowed;
+        &:hover{
+            background-color: @dl-gray-2;
+        }
+    }
+}
+
 .dl-btn-outline{
     background-color: @white;
     &:hover{
@@ -179,6 +198,16 @@ ol {
         color: @dl-pink-6;
         &:hover{
             background-color: @dl-pink-1;
+        }
+    }
+}
+.dl-btn-outline{
+    &:disabled{
+        background-color: @white;
+        color: @dl-gray-5;
+        cursor: not-allowed;
+        &:hover{
+            background-color: @white;
         }
     }
 }

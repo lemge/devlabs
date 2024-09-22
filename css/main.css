@@ -1071,6 +1071,25 @@ ol li * {
 .dl-btn-pink:hover {
   background-color: #ec4899;
 }
+.dl-btn-blue:disabled,
+.dl-btn-red:disabled,
+.dl-btn-green:disabled,
+.dl-btn-yellow:disabled,
+.dl-btn-purple:disabled,
+.dl-btn-pink:disabled {
+  border-color: #d4d4d8;
+  background-color: #e4e4e7;
+  color: #71717a;
+  cursor: not-allowed;
+}
+.dl-btn-blue:disabled:hover,
+.dl-btn-red:disabled:hover,
+.dl-btn-green:disabled:hover,
+.dl-btn-yellow:disabled:hover,
+.dl-btn-purple:disabled:hover,
+.dl-btn-pink:disabled:hover {
+  background-color: #e4e4e7;
+}
 .dl-btn-outline {
   background-color: #ffffff;
 }
@@ -1112,4 +1131,12 @@ ol li * {
 }
 .dl-btn-outline.dl-btn-pink:hover {
   background-color: #fce7f3;
+}
+.dl-btn-outline:disabled {
+  background-color: #ffffff;
+  color: #71717a;
+  cursor: not-allowed;
+}
+.dl-btn-outline:disabled:hover {
+  background-color: #ffffff;
 }
