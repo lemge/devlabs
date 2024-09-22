@@ -750,3 +750,45 @@ ol li * {
 .dl-btn-pink:hover {
   background-color: #ec4899;
 }
+.dl-btn-outline {
+  background-color: #ffffff;
+}
+.dl-btn-outline:hover {
+  background-color: #f4f4f5;
+}
+.dl-btn-outline.dl-btn-blue {
+  color: #2563eb;
+}
+.dl-btn-outline.dl-btn-blue:hover {
+  background-color: #dbeafe;
+}
+.dl-btn-outline.dl-btn-red {
+  color: #dc2626;
+}
+.dl-btn-outline.dl-btn-red:hover {
+  background-color: #fee2e2;
+}
+.dl-btn-outline.dl-btn-green {
+  color: #059669;
+}
+.dl-btn-outline.dl-btn-green:hover {
+  background-color: #d1fae5;
+}
+.dl-btn-outline.dl-btn-yellow {
+  color: #f59e0b;
+}
+.dl-btn-outline.dl-btn-yellow:hover {
+  background-color: #fef3c7;
+}
+.dl-btn-outline.dl-btn-purple {
+  color: #7c3aed;
+}
+.dl-btn-outline.dl-btn-purple:hover {
+  background-color: #ede9fe;
+}
+.dl-btn-outline.dl-btn-pink {
+  color: #db2777;
+}
+.dl-btn-outline.dl-btn-pink:hover {
+  background-color: #fce7f3;
+}
