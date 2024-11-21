@@ -9,8 +9,9 @@ package main
 import "net/http"
 
 func main() {
+	port:="8081"
 	http.Handle("/", http.StripPrefix("/", http.FileServer(http.Dir("../"))))
-	println("Server started on port 8080")
-	println("Visit http://localhost:8080 in your browser")
-	http.ListenAndServe(":8080", nil)
+	println("Server started on port "+port)
+	println("Visit http://localhost:"+port+" in your browser")
+	http.ListenAndServe(":"+port, nil)
 }
