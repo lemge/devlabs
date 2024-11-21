@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单控件示例</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div></div>
+    <div class="container container-md">
+        <!-- 标题 -->
+        <div class=" text-center">
+            <div class="space-20"></div>
+            <h1>Form Components 表单控件</h1>
+            <div class="space-20"></div>
+        </div>
+        <hr>
+
+        <!-- 主要展示内容 -->
+
+        <div class="dl-panel">
+            <div class="dl-panel-header">
+                表单控件示例
+            </div>
+            <div class="dl-panel-body">
+                <!-- 文本输入框 -->
+                <div class="dl-form-group">
+                    <label class="group-title">文本输入框</label>
+                    <input type="text" class="dl-form-control" placeholder="请输入文本">
+                    <input type="text" class="dl-form-control" disabled placeholder="禁用状态">
+                </div>
+
+                <div class="dl-form-group">
+                    <label class="group-title">密码输入框</label>
+                    <input type="password" class="dl-form-control" placeholder="请输入密码">
+                    <input type="password" class="dl-form-control" disabled placeholder="禁用状态">
+                </div>
+
+                <!-- 文本域 -->
+                <div class="dl-form-group">
+                    <label class="group-title">文本域</label>
+                    <textarea class="dl-form-control" rows="3" placeholder="请输入多行文本"></textarea>
+                    <textarea class="dl-form-control" rows="3" disabled placeholder="禁用状态"></textarea>
+                </div>
+
+                <!-- 选择框 -->
+                <div class="dl-form-group">
+                    <label class="group-title">选择框</label>
+                    <select class="dl-form-control">
+                        <option>选项1</option>
+                        <option>选项2</option>
+                        <option>选项3</option>
+                    </select>
+                    <select class="dl-form-control" disabled>
+                        <option>禁用状态</option>
+                    </select>
+                </div>
+
+                <!-- 单选框 -->
+                <div class="dl-form-group">
+                    <label class="group-title">单选框</label>
+                    <div>
+                        <label class="dl-radio">
+                            <input type="radio" name="radio"> 选项1
+                        </label>
+                        <label class="dl-radio">
+                            <input type="radio" name="radio"> 选项2
+                        </label>
+                        <label class="dl-radio">
+                            <input type="radio" name="radio" disabled> 禁用选项
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 复选框 -->
+                <div class="dl-form-group">
+                    <label class="group-title">复选框</label>
+                    <div>
+                        <label class="dl-checkbox">
+                            <input type="checkbox"> 选项1
+                        </label>
+                        <label class="dl-checkbox">
+                            <input type="checkbox"> 选项2
+                        </label>
+                        <label class="dl-checkbox">
+                            <input type="checkbox" disabled> 禁用选项
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 按钮 -->
+                <div class="dl-form-group">
+                    <button type="submit" class="dl-btn dl-btn-blue">提交</button>
+                    <button type="reset" class="dl-btn">重置</button>
+                    <button type="button" class="dl-btn" disabled>禁用按钮</button>
+                </div>
+
+                <!-- 不同状态的输入框 -->
+                <div class="dl-form-group">
+                    <label class="group-title">不同状态的输入框</label>
+                    <input type="text" class="dl-form-control dl-form-blue" placeholder="蓝色边框 - 正常状态">
+                    <div class="space-10"></div>
+                    <input type="text" class="dl-form-control dl-form-green" placeholder="绿色边框 - 成功状态">
+                    <div class="space-10"></div>
+                    <input type="text" class="dl-form-control dl-form-red" placeholder="红色边框 - 错误状态">
+                    <div class="space-10"></div>
+                    <input type="text" class="dl-form-control dl-form-yellow" placeholder="黄色边框 - 警告状态">
+                </div>
+
+
+            </div>
+        </div>
+
+        <!-- 横向表单布局面板 -->
+        <div class="dl-panel">
+            <div class="dl-panel-header">
+                横向表单布局示例
+            </div>
+            <div class="dl-panel-body">
+                <div class="dl-form-group">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label class="align-items-center h100">基础信息：   </label>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="dl-form-control" placeholder="姓名">
+                        </div>
+                        <div class="col-md-4">
+                            <input type="email" class="dl-form-control" placeholder="邮箱">
+                        </div>
+                        <div class="col-md-4">
+                            <input type="tel" class="dl-form-control" placeholder="电话">
+                        </div>
+                        <div class="col-md-4">
+                            <button type="submit" class="dl-btn dl-btn-blue">确认</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dl-form-group">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>所在城市</label>
+                            <select class="dl-form-control">
+                                <option>北京</option>
+                                <option>上海</option>
+                                <option>广州</option>
+                                <option>深圳</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label>职业</label>
+                            <input type="text" class="dl-form-control" placeholder="请输入您的职业">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

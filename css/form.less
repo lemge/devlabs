@@ -1,0 +1,99 @@
+@import "comp";
+
+//表单控件样式
+.dl-form-group {
+    margin-bottom: 15px;
+    
+    
+    .group-title{
+        display: flex;
+        width: 100%;
+        align-items: center;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+}
+
+.dl-form-control {
+    display: block;
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 1rem;
+    line-height: 1.5;
+    border: 1px solid @dl-gray-3;
+    .radius;
+    
+    &:focus {
+        outline: none;
+        border-color: @dl-blue-5;
+        box-shadow: 0 0 0 2px @dl-blue-1;
+    }
+    
+    &:disabled {
+        background-color: @dl-gray-1;
+        cursor: not-allowed;
+    }
+    
+    &::placeholder {
+        color: @dl-gray-4;
+    }
+}
+
+// 单选框和复选框样式
+.dl-radio,
+.dl-checkbox {
+    display: inline-block;
+    margin-right: 15px;
+    cursor: pointer;
+    
+    input[type="radio"],
+    input[type="checkbox"] {
+        margin-right: 5px;
+        
+        &:disabled {
+            cursor: not-allowed;
+            
+            & + span {
+                color: @dl-gray-4;
+            }
+        }
+    }
+}
+
+// 选择框样式
+select.dl-form-control {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 16px;
+    padding-right: 32px;
+    
+    &:disabled {
+        background-image: none;
+    }
+}
+
+// 文本域样式
+textarea.dl-form-control {
+    min-height: 80px;
+    resize: vertical;
+}
+
+// 不同状态的输入框
+.dl-form-blue {
+    border-color: @dl-blue-5;
+    background-color: @dl-blue-0;
+}
+.dl-form-green {
+    border-color: @dl-green-5;
+    background-color: @dl-green-0;
+}
+.dl-form-red {
+    border-color: @dl-red-5;
+    background-color: @dl-red-0;
+}
+.dl-form-yellow {
+    border-color: @dl-yellow-5;
+    background-color: @dl-yellow-0;
+}

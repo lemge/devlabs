@@ -960,6 +960,16 @@ hr {
 .box-shadow-inset {
   box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.24);
 }
+.align-items-center {
+  display: flex;
+  align-items: center;
+}
+.h100 {
+  height: 100%;
+}
+.w100 {
+  width: 100%;
+}
 .dl-panel {
   border-radius: 4px;
   box-shadow: 0 0 10px #e4e4e7;
@@ -1018,7 +1028,6 @@ ol li * {
   cursor: pointer;
   border-radius: 4px;
   padding: 10px 20px;
-  margin: 10px;
   border: 1px solid #d4d4d8;
   background-color: #fafafa;
 }
@@ -1077,6 +1086,7 @@ ol li * {
 .dl-btn-pink:hover {
   background-color: #ec4899;
 }
+.dl-btn:disabled,
 .dl-btn-blue:disabled,
 .dl-btn-red:disabled,
 .dl-btn-green:disabled,
@@ -1088,6 +1098,7 @@ ol li * {
   color: #71717a;
   cursor: not-allowed;
 }
+.dl-btn:disabled:hover,
 .dl-btn-blue:disabled:hover,
 .dl-btn-red:disabled:hover,
 .dl-btn-green:disabled:hover,
@@ -1157,4 +1168,90 @@ ol li * {
 .dl-btn-sm {
   padding: 4px 8px;
   font-size: 0.6rem;
+}
+.dl-form-group {
+  margin-bottom: 15px;
+}
+.dl-form-group .group-title {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+.dl-form-control {
+  display: block;
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 1rem;
+  line-height: 1.5;
+  border: 1px solid #d4d4d8;
+  border-radius: 4px;
+}
+.dl-form-control:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px #dbeafe;
+}
+.dl-form-control:disabled {
+  background-color: #f4f4f5;
+  cursor: not-allowed;
+}
+.dl-form-control::placeholder {
+  color: #a1a1aa;
+}
+.dl-radio,
+.dl-checkbox {
+  display: inline-block;
+  margin-right: 15px;
+  cursor: pointer;
+}
+.dl-radio input[type="radio"],
+.dl-checkbox input[type="radio"],
+.dl-radio input[type="checkbox"],
+.dl-checkbox input[type="checkbox"] {
+  margin-right: 5px;
+}
+.dl-radio input[type="radio"]:disabled,
+.dl-checkbox input[type="radio"]:disabled,
+.dl-radio input[type="checkbox"]:disabled,
+.dl-checkbox input[type="checkbox"]:disabled {
+  cursor: not-allowed;
+}
+.dl-radio input[type="radio"]:disabled + span,
+.dl-checkbox input[type="radio"]:disabled + span,
+.dl-radio input[type="checkbox"]:disabled + span,
+.dl-checkbox input[type="checkbox"]:disabled + span {
+  color: #a1a1aa;
+}
+select.dl-form-control {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 16px;
+  padding-right: 32px;
+}
+select.dl-form-control:disabled {
+  background-image: none;
+}
+textarea.dl-form-control {
+  min-height: 80px;
+  resize: vertical;
+}
+.dl-form-blue {
+  border-color: #3b82f6;
+  background-color: #eff6ff;
+}
+.dl-form-green {
+  border-color: #10b981;
+  background-color: #ecfdf5;
+}
+.dl-form-red {
+  border-color: #ef4444;
+  background-color: #fef2f2;
+}
+.dl-form-yellow {
+  border-color: #f59e0b;
+  background-color: #fffbeb;
 }

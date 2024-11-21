@@ -639,3 +639,13 @@ hr {
 .box-shadow-inset {
   box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.24);
 }
+.align-items-center {
+  display: flex;
+  align-items: center;
+}
+.h100 {
+  height: 100%;
+}
+.w100 {
+  width: 100%;
+}
