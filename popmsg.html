@@ -1,0 +1,245 @@
+<!--
+ * @Description: popmsg 弹出提示
+ * @Date: 2024-05-17 22:19:13
+ * @LastEditors: lec
+ * @LastEditTime: 2024-09-22 23:16:32
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Buttons Component</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/popmsg.css">
+    <script src="js/popmsg.js"></script>
+</head>
+
+<body class="bg-box">
+    <div>
+
+        <div class="container container-md">
+            <div class=" text-center">
+                <div class="space-20"></div>
+            <h1>The Popup Message Component 弹框组件</h1>
+            <div class="space-20"></div>
+            </div>
+            <hr>
+            <div class="dl-panel">
+                <div class="dl-panel-header">
+                    弹框说明
+                </div>
+                <div class="dl-panel-body">
+                    <p>
+                        <b>功能</b>
+                    </p>
+                    <p>根据需求可以显示常规、成功、警告、错误、信息等不同类型的提示框</p>
+                    <p>根据需求可以显示左上，中上，右上，中中，左下，中下，右下等不同位置的提示框</p>
+                    <p>根据需求设置大中小不同的尺寸</p>
+                    <p>可以根据dom元素的id来设置弹框组件的显示位置</p>
+                    <p>根据需求，可以设置不同的显示时间，以及是否显示关闭按钮</p>
+                    <p>根据需求，是否开启遮罩层</p>
+                    <p>可以在同时弹出多个弹框组件，独立不受影响，当显示在同一位置时，依次排列</p>
+                    <p>
+                        <b>设计要点</b>
+                    </p>
+                    <p>使用js链式编程来设置弹框组件</p>
+                    <p>使用css来设置弹框组件的样式</p>
+                    <p>
+                        <b>使用方式</b>
+                    </p>
+                    <p>引入popmsg.css文件</p>
+                    <p>引入popmsg.js文件</p>
+                    <p>调用popmsg方法</p>
+                </div>
+            </div>
+
+            <div class="dl-panel">
+                <div class="dl-panel-header">
+                    类型示例
+                </div>
+                <div class="dl-panel-body">
+                    <button class="dl-btn" id="popmsg-btn">显示弹框</button>
+                    <script>
+                        document.querySelector('#popmsg-btn').addEventListener('click', function () {
+                            popmsg.pos('top-center').type('com-msg').body('提示信息').msg();
+                        });
+                    </script>
+                    <button class="dl-btn" id="popmsg-btn-success">显示成功弹框</button>
+                    <script>
+                        document.querySelector('#popmsg-btn-success').addEventListener('click', function () {
+                            popmsg.pos('top-center').type('success-msg').body('成功信息').msg();
+                        });
+                    </script>
+                    <button class="dl-btn" id="popmsg-btn-warning">显示警告弹框</button>
+                    <script>
+                        document.querySelector('#popmsg-btn-warning').addEventListener('click', function () {
+                            popmsg.pos('top-center').type('warning-msg').body('警告信息').msg();
+                        });
+                    </script>
+                    <button class="dl-btn" id="popmsg-btn-error">显示错误弹框</button>
+                    <script>
+                        document.querySelector('#popmsg-btn-error').addEventListener('click', function () {
+                            popmsg.pos('top-center').type('error-msg').body('错误信息').msg();
+                        });
+                    </script>
+                    <button class="dl-btn" id="popmsg-btn-info">显示信息弹框</button>
+                    <script>
+                        document.querySelector('#popmsg-btn-info').addEventListener('click', function () {
+                            popmsg.pos('top-center').type('info-msg').body('信息信息').msg();
+                        });
+                    </script>
+                </div>
+            </div>
+            <!-- 位置示例 -->
+            <div class="dl-panel">
+                <div class="dl-panel-header">
+                    位置示例
+                </div>
+                <div class="dl-panel-body">
+                    <button class="dl-btn" id="popmsg-btn-top-left">上左</button>
+                    <script>
+                        document.querySelector('#popmsg-btn-top-left').addEventListener('click', function () {
+                            popmsg.pos('top-left').type('com-msg').body('提示信息').msg();
+                        });
+                    </script>
+                    <button class="dl-btn" id="popmsg-btn-top-center">上中</button>
+                    <script>
+                        document.querySelector('#popmsg-btn-top-center').addEventListener('click', function () {
+                            popmsg.pos('top-center').type('com-msg').body('提示信息').msg();
+                        });
+                    </script>
+                    <button class="dl-btn" id="popmsg-btn-top-right">上右</button>
+                    <script>
+                        document.querySelector('#popmsg-btn-top-right').addEventListener('click', function () {
+                            popmsg.pos('top-right').type('com-msg').body('提示信息').msg();
+                        });
+                    </script>
+                    <button class="dl-btn" id="popmsg-btn-center-left">中左</button>
+                    <script>
+                        document.querySelector('#popmsg-btn-center-left').addEventListener('click', function () {
+                            popmsg.pos('center-left').type('com-msg').body('提示信息').msg();
+                        });
+                    </script>
+                    <button class="dl-btn" id="popmsg-btn-center-center">中中</button>
+                    <script>
+                        document.querySelector('#popmsg-btn-center-center').addEventListener('click', function () {
+                            popmsg.pos('center-center').type('com-msg').body('提示信息').msg();
+                        });
+                    </script>
+                    <button class="dl-btn" id="popmsg-btn-center-right">中右</button>
+                    <script>
+                        document.querySelector('#popmsg-btn-center-right').addEventListener('click', function () {
+                            popmsg.pos('center-right').type('com-msg').body('提示信息').msg();
+                        });
+                    </script>
+                    <button class="dl-btn" id="popmsg-btn-bottom-left">下左</button>
+                    <script>
+                        document.querySelector('#popmsg-btn-bottom-left').addEventListener('click', function () {
+                            popmsg.pos('bottom-left').type('com-msg').body('提示信息').msg();
+                        });
+                    </script>
+                    <button class="dl-btn" id="popmsg-btn-bottom-center">下中</button>
+                    <script>
+                        document.querySelector('#popmsg-btn-bottom-center').addEventListener('click', function () {
+                            popmsg.pos('bottom-center').type('com-msg').body('提示信息').msg();
+                        });
+                    </script>
+                    <button class="dl-btn" id="popmsg-btn-bottom-right">下右</button>
+                    <script>
+                        document.querySelector('#popmsg-btn-bottom-right').addEventListener('click', function () {
+                            popmsg.pos('bottom-right').type('com-msg').body('提示信息').msg();
+                        });
+                    </script>
+                </div>
+            </div>
+            <!-- 显示大小示例 -->
+            <div class="dl-panel">
+                <div class="dl-panel-header">
+                    显示大小示例
+                </div>
+                <div class="dl-panel-body">
+                    <button class="dl-btn" id="popmsg-btn-large">大</button>
+                    <script>
+                        document.querySelector('#popmsg-btn-large').addEventListener('click', function () {
+                            popmsg.pos('top-center').size('l').type('com-msg').body('提示信息').msg();
+                        });
+                    </script>
+
+                    <button class="dl-btn" id="popmsg-btn-medium">中</button>
+                    <script>
+                        document.querySelector('#popmsg-btn-medium').addEventListener('click', function () {
+                            popmsg.pos('top-center').size('m').type('com-msg').body('提示信息').msg();
+                        });
+                    </script>
+                    <button class="dl-btn" id="popmsg-btn-small">小</button>
+                    <script>
+                        document.querySelector('#popmsg-btn-small').addEventListener('click', function () {
+                            popmsg.pos('top-center').size('s').type('com-msg').body('提示信息').msg();
+                        });
+                    </script>
+                </div>
+            </div>
+
+            <!-- 显示时间示例 -->
+            <div class="dl-panel">
+                <div class="dl-panel-header">
+                    显示时间示例
+                </div>
+                <div class="dl-panel-body">
+                    <button class="dl-btn" id="popmsg-btn-time-1">2秒</button>
+                    <script>
+                        document.querySelector('#popmsg-btn-time-1').addEventListener('click', function () {
+                            popmsg.pos('top-center').time(2000).type('com-msg').body('提示信息').msg();
+                        });
+                    </script>
+                    <button class="dl-btn" id="popmsg-btn-time-3">3秒</button>
+                    <script>
+                        document.querySelector('#popmsg-btn-time-3').addEventListener('click', function () {
+                            popmsg.pos('top-center').time(3000).type('com-msg').body('提示信息').msg();
+                        });
+                    </script>
+                    <button class="dl-btn" id="popmsg-btn-time-5">5秒</button>
+                    <script>
+                        document.querySelector('#popmsg-btn-time-5').addEventListener('click', function () {
+                            popmsg.pos('top-center').time(5000).type('com-msg').body('提示信息').msg();
+                        });
+                    </script>
+                </div>
+            </div>
+
+            <!-- 遮罩层示例 -->
+            <div class="dl-panel">
+                <div class="dl-panel-header">
+                    遮罩层示例
+                </div>
+                <div class="dl-panel-body">
+                    <button class="dl-btn" id="popmsg-btn-mask">带遮罩层的消息</button>
+                    <script>
+                        document.querySelector('#popmsg-btn-mask').addEventListener('click', function () {
+                            popmsg.pos('center-center').mask(true).type('com-msg').body('带遮罩层的消息').msg();
+                        });
+                    </script>
+                    <button class="dl-btn" id="popmsg-btn-mask-show">显示遮罩层</button>
+                    <script>
+                        document.querySelector('#popmsg-btn-mask-show').addEventListener('click', function () {
+                            popmsg.createMask();
+                        });
+                    </script>
+                    <button class="dl-btn" id="popmsg-btn-mask-hide">隐藏遮罩层</button>
+                    <script>
+                        document.querySelector('#popmsg-btn-mask-hide').addEventListener('click', function () {
+                            popmsg.removeMask();
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    // 示例
+</script>
+
+</html>

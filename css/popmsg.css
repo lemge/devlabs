@@ -1,0 +1,90 @@
+.popmsg-box {
+  position: fixed;
+  z-index: 9999;
+  width: auto;
+  max-width: 300px;
+  background: red;
+}
+.popmsg-msg {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.3s ease;
+  text-align: center;
+}
+.top-left {
+  top: 20px;
+  left: 20px;
+}
+.top-center {
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.top-right {
+  top: 20px;
+  right: 20px;
+}
+.center-left {
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+}
+.center-center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.center-right {
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+.bottom-left {
+  bottom: 20px;
+  left: 20px;
+}
+.bottom-center {
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.bottom-right {
+  bottom: 20px;
+  right: 20px;
+}
+.large-msg {
+  font-size: 20px;
+}
+.medium-msg {
+  font-size: 16px;
+}
+.small-msg {
+  font-size: 12px;
+}
+.com-msg {
+  background-color: #fff;
+  color: #000;
+}
+.info-msg {
+  background-color: #2196F3;
+  color: white;
+}
+.success-msg {
+  background-color: #4CAF50;
+  color: white;
+}
+.error-msg {
+  background-color: #F44336;
+  color: white;
+}
+.popmsg-mask {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  bottom: 50%;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
