@@ -1,0 +1,106 @@
+<!--
+ * @Description: 
+ * @Date: 2024-05-17 22:19:13
+ * @LastEditors: lec
+ * @LastEditTime: 2024-05-21 13:44:03
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对话框组件</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/dialogue.css">
+    <script src="js/dialogue.js"></script>
+</head>
+
+<body class="bg-box">
+    <div>
+
+        <div class="container container-md">
+            <div class=" text-center">
+                <div class="space-20"></div>
+                <h1>对话框组件</h1>
+                <div class="space-20"></div>
+            </div>
+            <hr>
+            <div class="dl-panel">
+                <div class="dl-panel-header">
+                    对话框示例
+                </div>
+                <div class="dl-panel-body">
+                    <!-- 弹出常规对话框 -->
+                    <button class="dl-btn" id="dl-btn-normal">弹出常规对话框</button>
+                    <script>
+                        document.getElementById('dl-btn-normal').addEventListener('click', function () {
+                            dia().title('常规对话框').body('这是常规对话框的内容').to();
+                        });
+                    </script>
+                    <!-- 超长文本对话框 -->
+                    <button class="dl-btn dl-dia-btn" id="dl-btn-long" data-dia="dia1">弹出超长文本对话框</button>
+                    <script>
+                        document.getElementById('dl-btn-long').addEventListener('click', function () {
+                            dia().title('超长文本对话框').body('这是超长文本对话框的内容这是超长文本对话框的内容这是超长文本对话框的内' +
+                                '这是超长文本对话框的内容这是超长文本对话框的内容这是超长文本对话框的内容这是超长文本对话框的内容这是超长文本对话框的内容这是超长文本对话框的内容这是超长文本对话框的内容' +
+                                '这是超长文本对话框的内容这是超长文本对话框的内容这是超长文本对话框的内容这是超长文本对话框的内容这是超长文本对话框的内容这是超长文本对话框的内容这是超长文本对话框的内容' +
+                                '这是超长文本对话框的内容这是超长文本对话框的内容这是超长文本对话框的内容这是超长文本对话框的内容这是超长文本对话框的内容这是超长文本对话框的内容这是超长文本对话框的内容' +
+                                '这是超长文本对话框的内容这是超长文本对话框的内容这是超长文本对话框的内容这是超长文本对话框的内容这是超长文本对话框的内容这是超长文本对话框的内容这是超长文本对话框的内容' +
+                                '这是超长文本对话框的内容这是超长文本对话框的内容这是超长文本对话框的内容这是超长文本对话框的内容这是超长文本对话框的内容这是超长文本对话框的内容这是超长文本对话框的内容' +
+                                '这是超长文本对话框的内容这是超长文本对话框的内容这是超长文本对话框的内容这是超长文本对话框的内容这是超长文本对话框的内容这是超长文本对话框的内容这是超长文本对话框的内容' +
+                                '容这是超长文本对话框的内容这是超长文本对话框的内容这是超长文本对话框的内容这是超长文本对话框的内容这是超长文本对话框的内容这是超长文本对话框的内容这是超长文本对话框的内容这是超长文本对话框的内容这是超长文本对话框的内容这是超长文本对话框的内容这是超长文本对话框的内容这是超长文本对话框的内容这是超长文本对话框的内容这是超长文本对话框的内容这是超长文本对话框的内容这是超长文本对话框的内容这是超长文本对话框的内容这是超长文本对话框的内容这是超长文本对话框的内容这是超长文本对话框的内容这是超长文本对话框的内容这是超长文本对话框的内容这是超长文本对话框的内容这是超长文本对话框的内容这是超长文本对话框的内容这是超长文本对话框的内容').to();
+                        });
+                    </script>
+                    <!-- 弹出从dom中获取内容的对话框 -->
+                    <button class="dl-btn dl-dia-btn" id="dl-btn-dom" data-dia="dia1">弹出从dom中获取内容的对话框</button>
+                    
+                    <div class="dl-dialogue dl-dom-dia" id="dia1">
+                        <div class="dl-dialogue-title-box">
+                            <div class="dl-dialogue-title">常规对话框</div>
+                            <div class="dl-dialogue-close">×</div>
+                        </div>
+                        <div class="dl-dialogue-body">
+                            <!-- 设置一个输入标题，姓名，日期，内容，提交按钮的表单 -->
+                            <form>
+                                <div class="dl-form-group">
+                                    <div class="group-title">标题：</div>
+                                    <input type="text" class="dl-form-control" placeholder="请输入标题">
+                                </div>
+                                <div class="dl-form-group">
+                                    <div class="group-title">姓名：</div>
+                                    <input type="text" class="dl-form-control" placeholder="请输入姓名">
+                                </div>
+                                <div class="dl-form-group">
+                                    <div class="group-title">日期：</div>
+                                    <input type="date" class="dl-form-control">
+                                </div>
+                                <div class="dl-form-group">
+                                    <div class="group-title">内容：</div>
+                                    <textarea class="dl-form-control" rows="4" placeholder="请输入内容"></textarea>
+                                </div>
+                                <div class="dl-form-group">
+                                    <button type="submit" class="dl-btn dl-btn-blue">提交</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="dl-panel" style="height: 1200px;">
+                <div class="dl-panel-header">
+                    对话框API
+                </div>
+                <div class="dl-panel-body">
+                    高度为1200px，测试对话框是否可以正常显示
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+</html>
