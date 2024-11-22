@@ -72,6 +72,9 @@ return (function () {
                 removeMsg(msg);
             });
         } else {
+            if(time_value==-1){
+                return msg;
+            }
             // 设置倒计时
             var countdown = time_value / 100; // 转换为秒
             var widthPercentage = 100; // 倒计时条的初始宽度
@@ -110,7 +113,7 @@ return (function () {
         mask = document.createElement('div');
         mask.className = 'popmsg-mask';
         document.body.appendChild(mask);
-        mask.addEventListener('click', removeMask);
+        // mask.addEventListener('click', removeMask);
         return mask;
     };
 
@@ -127,18 +130,23 @@ return (function () {
         }
     };
 
-    var msg = function () {
+    var msg = function (quick_msg) {
         console.log('popmsg p');
         var box = document.querySelector('.' + position_value);
         if (!box) {
             box = createboxs();
         }
+        if(quick_msg){
+            msg_value=quick_msg;
+        }
+
         var message = createMsg();
         box.appendChild(message);
         if (mask_value) {
             createMask();
             message.classList.add('popmsg-mask-has');
         }
+        return message;
     };
 
     
@@ -177,6 +185,9 @@ return (function () {
             return this;
         },
         msg: msg,
+        createMask:createMask,
+        removeMask:removeMask,
+        removeMsg:removeMsg,
         handclose:function(value=false){
             handclose_value=value;
             return this;

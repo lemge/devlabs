@@ -2,13 +2,11 @@
   position: fixed;
   z-index: 9999;
   width: auto;
-  width: 60%;
+  width: 30%;
 }
 .popmsg-msg {
   display: flex;
-  padding: 15px;
   padding-bottom: 0;
-  margin: 20px;
   border-radius: 5px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   transition: opacity 0.3s ease;
@@ -18,10 +16,33 @@
 .popmsg-msg-main {
   display: flex;
   width: 100%;
-  margin-bottom: 10px;
 }
 .popmsg-msg-body {
   flex: 1;
+}
+.large-msg {
+  font-size: 20px;
+  padding: 20px;
+  padding-bottom: 5px;
+}
+.large-msg .popmsg-msg-body {
+  margin-bottom: 15px;
+}
+.medium-msg {
+  font-size: 16px;
+  padding: 10px;
+  padding-bottom: 5px;
+}
+.medium-msg .popmsg-msg-body {
+  margin-bottom: 5px;
+}
+.small-msg {
+  font-size: 12px;
+  padding: 5px;
+  padding-bottom: 2px;
+}
+.small-msg .popmsg-msg-body {
+  margin-bottom: 3px;
 }
 .top-left {
   top: 20px;
@@ -63,15 +84,6 @@
 .bottom-right {
   bottom: 20px;
   right: 20px;
-}
-.large-msg {
-  font-size: 20px;
-}
-.medium-msg {
-  font-size: 16px;
-}
-.small-msg {
-  font-size: 12px;
 }
 .com-msg {
   background-color: #fff;
@@ -135,7 +147,6 @@
   transition: width 1s linear;
   /* 动画效果 */
   border-radius: 100px;
-  margin-bottom: 5px;
 }
 .com-msg .popmsg-timer {
   background-color: #cccccc;

@@ -60,6 +60,14 @@
                     类型示例
                 </div>
                 <div class="dl-panel-body">
+                    <!-- 简单用法 -->
+                    <button class="dl-btn" id="popmsg-btn-simple">简单用法</button>
+                    <script>
+                        document.querySelector('#popmsg-btn-simple').addEventListener('click', function () {
+                            popmsg().msg("简单用法");
+                        });
+                    </script>
+                    <!-- 常规 -->
                     <button class="dl-btn" id="popmsg-btn">显示弹框</button>
                     <script>
                         document.querySelector('#popmsg-btn').addEventListener('click', function () {
@@ -260,6 +268,16 @@
                     <script>
                         document.querySelector('#popmsg-btn-long').addEventListener('click', function () {
                             popmsg().pos('top-center').type('com-msg').body('长提示内容长提示内容长提示内容长提示内容长提示内容长提示内容长提示内容长提示内容长提示内容').msg();
+                        });
+                    </script>
+                    <!-- 无法关闭的消息，需要通过后台api删除 -->
+                    <button class="dl-btn" id="popmsg-btn-unclose">无法关闭的消息</button>
+                    <script>
+                        document.querySelector('#popmsg-btn-unclose').addEventListener('click', function () {
+                            var m1=popmsg().pos('center-center').time(-1).type('com-msg').body('无法关闭的消息，配合遮罩层做强制等待,3秒后js调用api关闭').mask(true).msg();
+                            setTimeout(function(){
+                                popmsg().removeMsg(m1);
+                            },3000);
                         });
                     </script>
                 </div>

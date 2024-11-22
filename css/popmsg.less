@@ -2,13 +2,11 @@
     position: fixed;
     z-index: 9999;
     width: auto;
-    width: 60%;
+    width: 30%;
 }
 .popmsg-msg {
     display: flex;
-    padding: 15px;
     padding-bottom: 0;
-    margin: 20px;
     border-radius: 5px;
     border-radius: 5px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -19,10 +17,38 @@
 .popmsg-msg-main{
     display: flex;
     width: 100%;
-    margin-bottom: 10px;
 }
 .popmsg-msg-body{
     flex: 1;
+}
+
+
+// 大
+.large-msg {
+    font-size: 20px;
+    padding: 20px;
+    padding-bottom: 5px;
+    .popmsg-msg-body{
+        margin-bottom: 15px;
+    }
+}
+// 中
+.medium-msg {
+    font-size: 16px;
+    padding: 10px;
+    padding-bottom: 5px;
+    .popmsg-msg-body{
+        margin-bottom: 5px;
+    }
+}
+// 小
+.small-msg {
+    font-size: 12px;
+    padding: 5px;
+    padding-bottom: 2px;
+    .popmsg-msg-body{
+        margin-bottom: 3px;
+    }
 }
 
 // 位置样式
@@ -84,18 +110,7 @@
     bottom: 20px;
     right: 20px;
 }
-// 大
-.large-msg {
-    font-size: 20px;
-}
-// 中
-.medium-msg {
-    font-size: 16px;
-}
-// 小
-.small-msg {
-    font-size: 12px;
-}
+
 
 // 类型样式
 .com-msg{
@@ -161,7 +176,6 @@
     opacity: 0.7;
     transition: width 1s linear; /* 动画效果 */
     border-radius: 100px;
-    margin-bottom: 5px;
 }
 .com-msg .popmsg-timer{
     background-color: #cccccc;
