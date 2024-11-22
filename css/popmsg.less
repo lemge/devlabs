@@ -6,13 +6,20 @@
 }
 .popmsg-msg {
     display: flex;
-    padding: 20px;
+    padding: 15px;
+    padding-bottom: 0;
     margin: 20px;
     border-radius: 5px;
     border-radius: 5px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     transition: opacity 0.3s ease;
     text-align: center;
+    flex-wrap: wrap;
+}
+.popmsg-msg-main{
+    display: flex;
+    width: 100%;
+    margin-bottom: 10px;
 }
 .popmsg-msg-body{
     flex: 1;
@@ -139,4 +146,23 @@
     font-size: 2rem;
     line-height: 1rem;
     margin-left: 10px;
+}
+.popmsg-timer-box{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.popmsg-timer {
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background-color: #ffffff; /* 倒计时条的颜色 */
+    opacity: 0.7;
+    transition: width 1s linear; /* 动画效果 */
+    border-radius: 100px;
+    margin-bottom: 5px;
+}
+.com-msg .popmsg-timer{
+    background-color: #cccccc;
 }

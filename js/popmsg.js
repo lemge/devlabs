@@ -9,7 +9,7 @@ return (function () {
     var mask_value = false; // 默认不显示遮罩
     var msg_value = "提示信息"; // 默认消息
     var size_value = "m"; // 默认大小
-    var handclose_value=true;//是否需要手动关闭
+    var handclose_value=false;//是否需要手动关闭
 
     var init = function () {
         // 重置所有参数为默认值
@@ -45,27 +45,50 @@ return (function () {
         msg.className = 'popmsg-msg';
         msg.classList.add(type_value); // 设置消息类型
         msg.classList.add(size_value); // 设置消息大小
-        var msgbody=document.createElement('div');
+        var msgmain=document.createElement('div');//消息与关闭按钮
+        msgmain.className = 'popmsg-msg-main';
+        var msgbody = document.createElement('div');
         msgbody.className = 'popmsg-msg-body';
         msgbody.innerHTML = msg_value;
-        msg.appendChild(msgbody);
+        msgmain.appendChild(msgbody);
+        msg.appendChild(msgmain);
 
-        //如果需要手动关闭
-        if(handclose_value){
-            //添加关闭按钮
+        // 添加倒计时条
+        var timer_box=document.createElement('div');
+        timer_box.classList.add('popmsg-timer-box');
+        var timer = document.createElement('div');
+        timer.className = 'popmsg-timer';
+        timer_box.appendChild(timer);
+        msg.appendChild(timer_box);
+
+        // 如果需要手动关闭
+        if (handclose_value) {
+            // 添加关闭按钮
             var closebtn = document.createElement('div');
             closebtn.className = 'popmsg-close';
             closebtn.innerHTML = '×';
-            msg.appendChild(closebtn);
+            msgmain.appendChild(closebtn);
             closebtn.addEventListener('click', function () {
                 removeMsg(msg);
             });
-            return msg;
+        } else {
+            // 设置倒计时
+            var countdown = time_value / 100; // 转换为秒
+            var widthPercentage = 100; // 倒计时条的初始宽度
+            timer.style.width = widthPercentage + '%'; // 设置初始宽度
+
+            var interval = setInterval(function () {
+                countdown--;
+                widthPercentage = (countdown / (time_value / 100)) * 100; // 计算剩余宽度百分比
+                timer.style.width = widthPercentage + '%'; // 更新倒计时条宽度
+
+                if (countdown <= 0) {
+                    clearInterval(interval);
+                    removeMsg(msg);
+                }
+            }, 100);
         }
 
-        setTimeout(function () {
-            removeMsg(msg);
-        }, time_value);
         return msg;
     };
 
