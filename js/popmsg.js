@@ -8,7 +8,7 @@ return (function () {
     var time_value = 3000; // 默认时间
     var mask_value = false; // 默认不显示遮罩
     var msg_value = "提示信息"; // 默认消息
-    var size_value = "m"; // 默认大小
+    var size_value = "medium-msg"; // 默认大小
     var handclose_value=false;//是否需要手动关闭
 
     var init = function () {
@@ -174,7 +174,6 @@ return (function () {
             return this;
         },
         size: function (value = "m") {
-            size_value = value;
             if (value == "l") {
                 size_value = "large-msg";
             } else if (value == "m") {
