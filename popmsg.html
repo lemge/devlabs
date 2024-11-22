@@ -66,6 +66,13 @@
                             popmsg().pos('top-center').type('com-msg').body('提示信息').msg();
                         });
                     </script>
+                    <!-- 深色常规 -->
+                    <button class="dl-btn" id="popmsg-btn-dark">深色常规</button>
+                    <script>
+                        document.querySelector('#popmsg-btn-dark').addEventListener('click', function () {
+                            popmsg().pos('top-center').type('dark-msg').body('深色常规').msg();
+                        });
+                    </script>
                     <button class="dl-btn" id="popmsg-btn-success">显示成功弹框</button>
                     <script>
                         document.querySelector('#popmsg-btn-success').addEventListener('click', function () {
@@ -235,6 +242,28 @@
                     </script>
                 </div>
             </div>
+            <!-- 其他示例 -->
+            <div class="dl-panel">
+                <div class="dl-panel-header">
+                    其他示例
+                </div>
+                <div class="dl-panel-body">
+                    <!-- 手动关闭 -->
+                    <button class="dl-btn" id="popmsg-btn-handclose">手动关闭</button>
+                    <script>
+                        document.querySelector('#popmsg-btn-handclose').addEventListener('click', function () {
+                            popmsg().pos('top-center').handclose(true).type('com-msg').body('手动关闭的消息').msg();
+                        });
+                    </script>
+                    <!-- 长提示内容 -->
+                    <button class="dl-btn" id="popmsg-btn-long">长提示内容</button>
+                    <script>
+                        document.querySelector('#popmsg-btn-long').addEventListener('click', function () {
+                            popmsg().pos('top-center').type('com-msg').body('长提示内容长提示内容长提示内容长提示内容长提示内容长提示内容长提示内容长提示内容长提示内容').msg();
+                        });
+                    </script>
+                </div>
+            </div>      
         </div>
     </div>
 </body>

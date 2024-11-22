@@ -9,6 +9,7 @@ return (function () {
     var mask_value = false; // 默认不显示遮罩
     var msg_value = "提示信息"; // 默认消息
     var size_value = "m"; // 默认大小
+    var handclose_value=true;//是否需要手动关闭
 
     var init = function () {
         // 重置所有参数为默认值
@@ -37,13 +38,31 @@ return (function () {
         }
     };
 
+
     var createMsg = function () {
         console.log('popmsg createMsg');
         var msg = document.createElement('div');
         msg.className = 'popmsg-msg';
-        msg.innerHTML = msg_value;
         msg.classList.add(type_value); // 设置消息类型
         msg.classList.add(size_value); // 设置消息大小
+        var msgbody=document.createElement('div');
+        msgbody.className = 'popmsg-msg-body';
+        msgbody.innerHTML = msg_value;
+        msg.appendChild(msgbody);
+
+        //如果需要手动关闭
+        if(handclose_value){
+            //添加关闭按钮
+            var closebtn = document.createElement('div');
+            closebtn.className = 'popmsg-close';
+            closebtn.innerHTML = '×';
+            msg.appendChild(closebtn);
+            closebtn.addEventListener('click', function () {
+                removeMsg(msg);
+            });
+            return msg;
+        }
+
         setTimeout(function () {
             removeMsg(msg);
         }, time_value);
@@ -99,6 +118,8 @@ return (function () {
         }
     };
 
+    
+
     return {
         init: init,
         pos: function (value = "top-center") {
@@ -132,7 +153,12 @@ return (function () {
             }
             return this;
         },
-        msg: msg
+        msg: msg,
+        handclose:function(value=false){
+            handclose_value=value;
+            return this;
+        }
+        
     };
 })();
 }
