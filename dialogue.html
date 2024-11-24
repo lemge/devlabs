@@ -38,8 +38,36 @@
                             dia().title('常规对话框').body('这是常规对话框的内容').to();
                         });
                     </script>
+                    <!-- 有按钮的对话框 -->
+                    <button class="dl-btn" id="dl-btn-btn">弹出有按钮的对话框</button>
+                    <script>
+                        document.getElementById('dl-btn-btn').addEventListener('click', function () {
+                            var thisdia=dia().title('有按钮的对话框').body('这是有按钮的对话框的内容')
+                            
+                            .setbtn('默认','',function(){
+                                console.log('默认');
+                                this.dia.des();
+                            })
+
+                            .setbtn('取消','red',function(){
+                                // alert('取消');
+                                console.log('取消');
+                                this.dia.des();
+                            })
+
+                            .setbtn('确定','blue',function(){
+                                // alert('确定'); 
+                                console.log("确定");
+                                this.dia.des();
+                            })
+                            .to();
+                        });
+                    </script>
+
+
+
                     <!-- 超长文本对话框 -->
-                    <button class="dl-btn dl-dia-btn" id="dl-btn-long" data-dia="dia1">弹出超长文本对话框</button>
+                    <button class="dl-btn " id="dl-btn-long">弹出超长文本对话框</button>
                     <script>
                         document.getElementById('dl-btn-long').addEventListener('click', function () {
                             dia().title('超长文本对话框').body('这是超长文本对话框的内容这是超长文本对话框的内容这是超长文本对话框的内' +
@@ -80,7 +108,36 @@
                                     <textarea class="dl-form-control" rows="4" placeholder="请输入内容"></textarea>
                                 </div>
                                 <div class="dl-form-group">
-                                    <button type="submit" class="dl-btn dl-btn-blue">提交</button>
+                                    <button type="button" class="dl-btn dl-btn-blue" id="form-submit">提交</button>
+                                    <script>
+                                        document.getElementById('form-submit').addEventListener('click', function(){
+                                            dia().title('确认').body('确认提交吗')
+                                            .setbtn('取消','red',function(){
+                                                
+                                                console.log('取消');
+                                                this.dia.des();
+                                            })
+                                            .setbtn('确定','blue',function(){
+                                                console.log('确定');
+                                                this.dia.des();
+                                                dia().title('提交成功').body('提交成功').setbtn('确定','blue',function(){
+                                                    
+                                                    
+                                                    this.dia.des();
+
+                                                //   var dia1= document.getElementById('dia1')
+                                                //   dia1.style.display = 'none';
+                                                window.dia.dia1.hid();
+
+                                                console.log(dia1.dataset.maskid);
+
+
+                                            
+                                                }).to();
+                                            })
+                                            .to();
+                                        });
+                                    </script>
                                 </div>
                             </form>
                         </div>
