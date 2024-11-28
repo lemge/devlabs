@@ -1180,7 +1180,7 @@ ol li * {
   font-weight: bold;
 }
 .dl-form-control {
-  display: block;
+  display: flex;
   width: 100%;
   padding: 8px 12px;
   font-size: 1rem;
@@ -1198,6 +1198,29 @@ ol li * {
   cursor: not-allowed;
 }
 .dl-form-control::placeholder {
+  color: #a1a1aa;
+}
+.dl-form-control-com {
+  display: flex;
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 1rem;
+  line-height: 1.5;
+  border: 1px solid #d4d4d8;
+  border-radius: 4px;
+  display: inline-flex;
+  width: auto;
+}
+.dl-form-control-com:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px #dbeafe;
+}
+.dl-form-control-com:disabled {
+  background-color: #f4f4f5;
+  cursor: not-allowed;
+}
+.dl-form-control-com::placeholder {
   color: #a1a1aa;
 }
 .dl-radio,
@@ -1254,4 +1277,405 @@ textarea.dl-form-control {
 .dl-form-yellow {
   border-color: #f59e0b;
   background-color: #fffbeb;
+}
+.dl-dialogue {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  min-width: 400px;
+  max-width: 90%;
+  max-height: 90%;
+  width: max-content;
+  visibility: hidden;
+  box-sizing: border-box;
+  z-index: 1000;
+}
+.dl-dialogue * {
+  box-sizing: border-box;
+}
+.dl-dialogue-title-box {
+  flex: 0 0 auto;
+  padding: 20px;
+  padding-bottom: 10px;
+  display: flex;
+  border-bottom: 1px solid #ccc;
+}
+.dl-dialogue-title {
+  flex: 0 0 auto;
+  font-weight: bold;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 auto;
+}
+.dl-dialogue-close {
+  flex: 0 0 auto;
+  cursor: pointer;
+  width: 1rem;
+  font-weight: bold;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  line-height: 1rem;
+  margin-left: 10px;
+}
+.dl-dialogue-body {
+  flex: 1 1 auto;
+  padding: 20px;
+  padding-top: 10px;
+  overflow: auto;
+}
+.dl-dom-dia {
+  display: none;
+}
+.dl-dialogue-footer {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+.dl-dialogue-footer button {
+  margin: 5px;
+}
+.dl-dialogue-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.popmsg-box {
+  position: fixed;
+  z-index: 9999;
+  width: auto;
+  width: 30%;
+}
+.popmsg-msg {
+  display: flex;
+  padding-bottom: 0;
+  margin: 5px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.3s ease;
+  text-align: center;
+  flex-wrap: wrap;
+}
+.popmsg-msg-main {
+  display: flex;
+  width: 100%;
+}
+.popmsg-msg-body {
+  flex: 1;
+}
+.large-msg {
+  font-size: 20px;
+  padding: 20px;
+  padding-bottom: 5px;
+}
+.large-msg .popmsg-msg-body {
+  margin-bottom: 15px;
+}
+.medium-msg {
+  font-size: 16px;
+  padding: 10px;
+  padding-bottom: 5px;
+}
+.medium-msg .popmsg-msg-body {
+  margin-bottom: 5px;
+}
+.small-msg {
+  font-size: 12px;
+  padding: 5px;
+  padding-bottom: 2px;
+}
+.small-msg .popmsg-msg-body {
+  margin-bottom: 3px;
+}
+.top-left {
+  top: 20px;
+  left: 20px;
+}
+.top-center {
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.top-right {
+  top: 20px;
+  right: 20px;
+}
+.center-left {
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+}
+.center-center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.center-right {
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+.bottom-left {
+  bottom: 20px;
+  left: 20px;
+}
+.bottom-center {
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.bottom-right {
+  bottom: 20px;
+  right: 20px;
+}
+.com-msg {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #aaaaaa;
+}
+.info-msg {
+  background-color: #2196F3;
+  color: white;
+}
+.success-msg {
+  background-color: #4CAF50;
+  color: white;
+}
+.warning-msg {
+  background-color: #FF9800;
+  color: white;
+}
+.error-msg {
+  background-color: #F44336;
+  color: white;
+}
+.dark-msg {
+  background-color: #333;
+  color: white;
+}
+.popmsg-mask {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.popmsg-close {
+  cursor: pointer;
+  width: 1rem;
+  font-weight: bold;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  line-height: 1rem;
+  margin-left: 10px;
+}
+.popmsg-timer-box {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.popmsg-timer {
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background-color: #ffffff;
+  /* 倒计时条的颜色 */
+  opacity: 0.7;
+  transition: width 1s linear;
+  /* 动画效果 */
+  border-radius: 100px;
+}
+.com-msg .popmsg-timer {
+  background-color: #cccccc;
+}
+.dl-tag {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #3f3f46;
+  border: 1px solid #18181b;
+  color: #fafafa;
+  font-size: 0.8rem;
+}
+.dl-tag-blue {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #3f3f46;
+  border: 1px solid #18181b;
+  color: #fafafa;
+  font-size: 0.8rem;
+  background-color: #2563eb;
+  border: 1px solid #1d4ed8;
+  color: #dbeafe;
+}
+.dl-tag-red {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #3f3f46;
+  border: 1px solid #18181b;
+  color: #fafafa;
+  font-size: 0.8rem;
+  background-color: #dc2626;
+  border: 1px solid #b91c1c;
+  color: #fee2e2;
+}
+.dl-tag-green {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #3f3f46;
+  border: 1px solid #18181b;
+  color: #fafafa;
+  font-size: 0.8rem;
+  background-color: #059669;
+  border: 1px solid #047857;
+  color: #d1fae5;
+}
+.dl-tag-yellow {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #3f3f46;
+  border: 1px solid #18181b;
+  color: #fafafa;
+  font-size: 0.8rem;
+  background-color: #d97706;
+  border: 1px solid #b45309;
+  color: #fef3c7;
+}
+.dl-tag-purple {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #3f3f46;
+  border: 1px solid #18181b;
+  color: #fafafa;
+  font-size: 0.8rem;
+  background-color: #7c3aed;
+  border: 1px solid #6d28d9;
+  color: #ede9fe;
+}
+.dl-tag-pink {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #3f3f46;
+  border: 1px solid #18181b;
+  color: #fafafa;
+  font-size: 0.8rem;
+  background-color: #db2777;
+  border: 1px solid #be185d;
+  color: #fce7f3;
+}
+.dl-tag-w {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #3f3f46;
+  color: #fafafa;
+  font-size: 0.8rem;
+  background-color: #fafafa;
+  border: 1px solid #18181b;
+  color: #3f3f46;
+}
+.dl-tag-w-blue {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #3f3f46;
+  border: 1px solid #18181b;
+  color: #fafafa;
+  font-size: 0.8rem;
+  background-color: #dbeafe;
+  border: 1px solid #1d4ed8;
+  color: #2563eb;
+}
+.dl-tag-w-red {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #3f3f46;
+  border: 1px solid #18181b;
+  color: #fafafa;
+  font-size: 0.8rem;
+  background-color: #fee2e2;
+  border: 1px solid #b91c1c;
+  color: #dc2626;
+}
+.dl-tag-w-green {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #3f3f46;
+  border: 1px solid #18181b;
+  color: #fafafa;
+  font-size: 0.8rem;
+  background-color: #d1fae5;
+  border: 1px solid #047857;
+  color: #059669;
+}
+.dl-tag-w-yellow {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #3f3f46;
+  border: 1px solid #18181b;
+  color: #fafafa;
+  font-size: 0.8rem;
+  background-color: #fef3c7;
+  border: 1px solid #b45309;
+  color: #d97706;
+}
+.dl-tag-w-purple {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #3f3f46;
+  border: 1px solid #18181b;
+  color: #fafafa;
+  font-size: 0.8rem;
+  background-color: #ede9fe;
+  border: 1px solid #6d28d9;
+  color: #7c3aed;
+}
+.dl-tag-w-pink {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #3f3f46;
+  border: 1px solid #18181b;
+  color: #fafafa;
+  font-size: 0.8rem;
+  background-color: #fce7f3;
+  border: 1px solid #be185d;
+  color: #db2777;
+}
+.dl-tag-sm {
+  font-size: 0.4rem;
+  padding: 2px 5px;
+}
+.dl-tag-lg {
+  font-size: 1.2rem;
+  padding: 10px 20px;
 }

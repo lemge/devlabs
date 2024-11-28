@@ -765,6 +765,7 @@ ol li * {
 .dl-btn-pink:hover {
   background-color: #ec4899;
 }
+.dl-btn:disabled,
 .dl-btn-blue:disabled,
 .dl-btn-red:disabled,
 .dl-btn-green:disabled,
@@ -776,6 +777,7 @@ ol li * {
   color: #71717a;
   cursor: not-allowed;
 }
+.dl-btn:disabled:hover,
 .dl-btn-blue:disabled:hover,
 .dl-btn-red:disabled:hover,
 .dl-btn-green:disabled:hover,
@@ -857,7 +859,7 @@ ol li * {
   font-weight: bold;
 }
 .dl-form-control {
-  display: block;
+  display: flex;
   width: 100%;
   padding: 8px 12px;
   font-size: 1rem;
@@ -875,6 +877,29 @@ ol li * {
   cursor: not-allowed;
 }
 .dl-form-control::placeholder {
+  color: #a1a1aa;
+}
+.dl-form-control-com {
+  display: flex;
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 1rem;
+  line-height: 1.5;
+  border: 1px solid #d4d4d8;
+  border-radius: 4px;
+  display: inline-flex;
+  width: auto;
+}
+.dl-form-control-com:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px #dbeafe;
+}
+.dl-form-control-com:disabled {
+  background-color: #f4f4f5;
+  cursor: not-allowed;
+}
+.dl-form-control-com::placeholder {
   color: #a1a1aa;
 }
 .dl-radio,

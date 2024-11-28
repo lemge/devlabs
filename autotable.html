@@ -1,8 +1,8 @@
 <!--
  * @Description: 
  * @Date: 2024-05-17 22:19:13
- * @LastEditors: lec tgoding@163.com
- * @LastEditTime: 2024-11-26 22:20:09
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2024-11-27 16:20:04
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -12,6 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>自动表格</title>
     <link rel="stylesheet" href="css/main.css">
+    <script src="js/autotable.js"></script>
 </head>
 
 <body class="bg-box">
@@ -39,7 +40,23 @@
                     4.支持字段隐藏或折叠。
                 </div> 
             </div>
-            
+
+            <!-- 表格展示 -->
+            <div class="dl-panel">
+                <div class="dl-panel-header">
+                    自动表格示例
+                </div>
+                <div class="dl-panel-body">
+                    <div class="row">
+                        <div class="col-md-24">
+                            <div id="autotable"></div>
+                            <script>
+                                console.log(at());
+                                at().init("autotable").datasource("http://localhost:8081/example").load_data();
+                            </script>
+                        </div>
+                    </div>
+            </div>
         </div>
 
     </div>

@@ -1,0 +1,56 @@
+{
+    "v": 20241126223040, 
+    "colinfo": [
+        {
+            "col": "id", 
+            "title": "ID", 
+            "defval": "", 
+            "tr": {
+                "val1": "show1",
+                "val2": "show2"
+            },
+            "width": 50,
+            "func": "",
+            "show": "comm/fold/hidden",
+            "inform": true,
+            "datatype": "int",
+            "infilter": true
+        }
+    ],
+    "action": [
+        {
+            "url": "/user/add", 
+            "name": " ", 
+            "key": "id" 
+        },
+        {
+            "url": "/user/edit", 
+            "name": " ", 
+            "key": "id" 
+        },
+        {
+            "url": "/user/delete", 
+            "name": " ", 
+            "key": "id" 
+        }
+    ],
+    "index": "id", 
+    "tablename": "user", 
+    "info": {
+        "rows": 2000, 
+        "page": 1, 
+        "pagelen": 10 
+    },
+    "data": [
+        [
+            1,
+            "thisisname",
+            "thisisvalue"
+        ],
+        [
+            2,
+            "this is 2 name",
+            "this is 2 value"
+        ]
+    ]
+}

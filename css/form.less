@@ -15,7 +15,7 @@
 }
 
 .dl-form-control {
-    display: block;
+    display: flex;
     width: 100%;
     padding: 8px 12px;
     font-size: 1rem;
@@ -37,6 +37,12 @@
     &::placeholder {
         color: @dl-gray-4;
     }
+}
+
+.dl-form-control-com {
+    .dl-form-control;
+    display: inline-flex;
+    width: auto;
 }
 
 // 单选框和复选框样式

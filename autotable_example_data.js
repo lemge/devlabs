@@ -1,3 +1,9 @@
+/*
+ * @Author: lec
+ * @Date: 2024-11-26 22:21:58
+ * @LastEditTime: 2024-11-27 14:35:38
+ * @Description: file content
+ */
 
 //autotable_example_data.js
 //这个文件用于存储autotable的示例数据，使用js格式是为了更好的添加注释，在使用过程中会使用json数据格式。
