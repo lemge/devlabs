@@ -15,6 +15,7 @@ var autotable = {
     totalpage: 1,//总页数
     reqargs: {},//请求参数
     pbl: 2,//当前页左右显示的页码数量
+    table: null,//表格
 
     /*
      * @description: 初始化函数
@@ -32,6 +33,16 @@ var autotable = {
     datasource: function (url) {
         this.data_source = url;
         return this;
+    },
+    //在action中添加查找
+    setaddaction: function () {
+        //向_this.data.action中添加查找按钮
+        this.data.action.push({
+            "url": this.data_source,
+            "name": "查找",
+            "act": "select",
+            "key": "id",
+        });
     },
 
     //ajax从远程地址data_source加载数据，使用原生ajax
@@ -60,6 +71,7 @@ var autotable = {
     },
     //开始构建
     startStruct: function () {
+        this.setaddaction();
         this.initData();
         this.buildTopBar();
         this.buildTable();
@@ -84,16 +96,10 @@ var autotable = {
         this.top_bar = document.createElement("div");
         this.top_bar.className = "top_bar";
         this.table_box.appendChild(this.top_bar);
-        //向_this.data.action中添加查找按钮
-        _this.data.action.push({
-            "url": "/user/select",
-            "name": "查找",
-            "act": "select",
-            "key": "id",
-        });
+
         //遍历this.data.action中的元素，构建按钮
         for (var i = 0; i < this.data.action.length; i++) {
-            var canuse = ["添加","查找"]
+            var canuse = ["添加", "查找"]
             if (canuse.indexOf(this.data.action[i].name) > -1) {
                 //继续执行添加
             } else {
@@ -106,15 +112,15 @@ var autotable = {
             button.dataset.actinfo = i;
             button.addEventListener("click", function (e) {
                 //执行动作
-                console.log(action);
-                    //执行添加
-                    _this.setdiaform(e.target, action.act);
-                
+                console.log("action", action);
+                //执行添加
+                _this.setdiaform(e.target, action.act);
+
             }.bind(this));
             this.top_bar.appendChild(button);
         }
 
-      
+
     },
     //构建表格
     buildTable: function () {
@@ -222,12 +228,9 @@ var autotable = {
         //执行删除动作
         //向url发送请求，请求方式为post，请求参数为info
         var xhr = new XMLHttpRequest();
-        xhr.open('post', url);
-        // xhr.setRequestHeader('Content-Type','application/json');
+        xhr.open('post', url, false); // 设置同步请求
         xhr.send(JSON.stringify(info));
-        xhr.onload = function () {
-            console.log(xhr.responseText);
-        }
+        console.log(xhr.responseText);
         console.log(url);
         console.log(info);
     },
@@ -235,33 +238,29 @@ var autotable = {
         //执行编辑动作
         //向url发送请求，请求方式为post，请求参数为info
         var xhr = new XMLHttpRequest();
-        xhr.open('post', url);
-        // xhr.setRequestHeader('Content-Type','application/json');
+        xhr.open('post', url, false); // 设置同步请求
         xhr.send(info);
-        xhr.onload = function () {
-            console.log(xhr.responseText);
-        }
+        console.log(xhr.responseText);
     },
     addaction: function (url, info) {
         //执行添加动作
         console.log("添加");
         //向url发送请求，请求方式为post，请求参数为info
         var xhr = new XMLHttpRequest();
-        xhr.open('post', url);
+        xhr.open('post', url, false); // 设置同步请求
         xhr.send(info);
-        xhr.onload = function () {
-            console.log(xhr.responseText);
-        }
+        console.log(xhr.responseText);
     },
-    selectaction:function(url,info){
+    selectaction: function (url, info) {
+        var _this = this;
         //执行查找动作
         //向url发送请求，请求方式为post，请求参数为info
         var xhr = new XMLHttpRequest();
-        xhr.open('post', url);
+        xhr.open('post', url, false); // 设置同步请求
         xhr.send(info);
-        xhr.onload = function () {
-            console.log(xhr.responseText);
-        }
+        console.log(xhr.responseText);
+        _this.data = JSON.parse(xhr.responseText);
+        _this.testfunc();
     },
     //根据colinfo内容设置对话框表单
     setdiaform: function (thisbtn, acttype) {
@@ -271,8 +270,8 @@ var autotable = {
             var thisrow = _this.data.data[thisbtn.dataset.actid];
         }
         var thisaction = _this.data.action[thisbtn.dataset.actinfo];
-        console.log("thisaction",thisaction);
-        console.log("thisbtn",thisbtn);
+        console.log("thisaction", thisaction);
+        console.log("thisbtn", thisbtn);
         //创建表单
         var form = document.createElement("form");
         form.classList.add("dl-form");
@@ -319,13 +318,31 @@ var autotable = {
                     _this.selectaction(thisaction.url, formdata);
                 }
                 console.log(formdata);
-                
+
                 // this.dia.des();
             })
             .to();
     },
+    //使用URL参数构建url
+    buildurl: function (url, args) {
+        var url = new URL(url);
+
+        // 修改查询参数
+        var params = new URLSearchParams(url.search);
+        for (var key in args) {
+            params.set(key, args[key]);
+        }
+        url.search = params.toString();
+
+
+        // 获取更新后的URI
+        var updatedUri = url.href; // "https://example.com/newpath?query=newvalue#fragment"
+        return updatedUri;
+    },
     //改变页码
     changePage: function (page) {
+        var _this = this;
+
         //执行动作
         if (page > this.totalpage) {
             page = this.totalpage;
@@ -335,6 +352,16 @@ var autotable = {
         }
         this.reqargs.page = page;
         this.pagenow = page;
+
+        //向data_source发送请求，请求方式为post，请求参数为reqargs
+        var xhr = new XMLHttpRequest();
+        xhr.open('get', _this.buildurl(_this.data_source, _this.reqargs), false); // 设置同步请求
+        console.log("reqargs", _this.reqargs);
+        xhr.send(_this.reqargs);
+        console.log(xhr.responseText);
+        _this.data = JSON.parse(xhr.responseText);
+
+        _this.data.pageinfo.page = page;
         console.log(page);
         this.testfunc();
     },
@@ -345,9 +372,7 @@ var autotable = {
     //testfunc
     testfunc: function () {
         this.clearTableBox();
-        this.buildTopBar();
-        this.buildTable();
-        this.buildBottomBar();
+        this.startStruct();
         // this.load_data();
     },
     //构建bottom操作栏
