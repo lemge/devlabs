@@ -41,7 +41,12 @@ return (function(){
         //设置内容
         var body = document.createElement('div');
         body.className = 'dl-dialogue-body';
-        body.innerHTML = body_value;
+        //如果body_value是dom对象，则直接添加
+        if (body_value instanceof HTMLElement) {
+            body.appendChild(body_value);
+        }else{
+            body.innerHTML = body_value;
+        }
         box.appendChild(body);
 
         //设置消息 footer

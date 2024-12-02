@@ -96,9 +96,14 @@ var autotable={
             var button=document.createElement("button");
             button.classList.add("dl-btn");
             button.innerHTML=action.name;
+            button.dataset.actinfo=i;
             button.addEventListener("click",function(){
                 //执行动作
                 console.log(action);
+                if (action.act=="add") {
+                    //执行编辑动作
+                    _this.setdiaform(button,action.act);
+                }
             }.bind(this));
             this.top_bar.appendChild(button);
         }
@@ -177,8 +182,8 @@ var autotable={
         var _this=this;
         var thisrow=_this.data.data[thisbtn.dataset.actid];
         var thisaction=_this.data.action[thisbtn.dataset.actinfo];
-        console.log(thisrow);
-        console.log(thisaction);
+        console.log("thisrow",thisrow);
+        console.log("thisaction",thisaction);
         //执行动作
         //delete
         if(thisaction.act=="delete"){
@@ -195,17 +200,45 @@ var autotable={
                 // alert('确定'); 
                 console.log("确定");
                 this.dia.des();
+                _this.deleteaction(thisaction.url,{key:thisrow[0]});
             })
             .to();
             
         }else if(thisaction.act=="edit"){
             //执行编辑动作
-            this.setdiaform(thisbtn);
+            this.setdiaform(thisbtn,thisaction.act);
         }
 
     },
+    deleteaction:function(url,info){
+        //执行删除动作
+        //向url发送请求，请求方式为post，请求参数为info
+        var xhr=new XMLHttpRequest();
+        xhr.open('post',url);
+        // xhr.setRequestHeader('Content-Type','application/json');
+        xhr.send(JSON.stringify(info));
+        xhr.onload=function(){
+            console.log(xhr.responseText);
+        }
+        console.log(url);
+        console.log(info);
+    },
+    editaction:function(url,info){
+        //执行编辑动作
+        //向url发送请求，请求方式为post，请求参数为info
+        var xhr=new XMLHttpRequest();
+        xhr.open('post',url);
+        // xhr.setRequestHeader('Content-Type','application/json');
+        xhr.send(info);
+        xhr.onload=function(){
+            console.log(xhr.responseText);
+        }
+    },
+    addaction:function(thisbtn){
+        //执行添加动作
+    },
     //根据colinfo内容设置对话框表单
-    setdiaform:function(thisbtn){
+    setdiaform:function(thisbtn,acttype){
         var _this=this;
         //创建对话框
 
@@ -218,6 +251,11 @@ var autotable={
         //遍历this.data.colinfo中的数据，创建表单项
         for(var i=0;i<this.data.colinfo.length;i++){
             var colinfo=this.data.colinfo[i];
+            if(colinfo.inform){
+                //在修改或新增表单中显示
+            }else{
+                continue;
+            }
             var div=document.createElement("div");
             div.classList.add("dl-form-item");
             form.appendChild(div);
@@ -227,9 +265,30 @@ var autotable={
             var input=document.createElement("input");
             input.classList.add("dl-form-control");
             input.placeholder=colinfo.defval;
+            input.name=colinfo.col;
+            if (acttype=="edit") {
+                input.value=thisrow[i];
+            }
             div.appendChild(input);
         }
-        
+        var thisdia=dia().title(thisaction.name).body(form);
+        thisdia.setbtn('取消','red',function(){
+            // alert('取消');
+            console.log('取消');
+            this.dia.des();
+        })
+        .setbtn('更新','blue',function(){
+            console.log("更新");
+            console.log(form);
+            var formdata=new FormData(form);
+            if (acttype=="edit") {
+                formdata.set("key",thisrow[0]);
+            }
+            console.log(formdata);
+            _this.editaction(thisaction.url,formdata);
+            // this.dia.des();
+        })
+        .to();
     },
     //改变页码
     changePage:function(page){
@@ -375,6 +434,10 @@ var autotable={
         });
         this.bottom_bar.appendChild(button);
     },
+}
+//获取唯一随机值
+function getuuid(){
+    return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
 }
 /*
  * @description: 调用autotable

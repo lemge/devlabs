@@ -25,7 +25,7 @@ var exampleData = map[string]any{
 			"width":    50,                 //列宽，如果没有设定就是自适应
 			"func":     "",                 //列的计算公式
 			"show":     "comm/fold/hidden", //列可见性，comm等同于常规显示，fold等同于折叠，hidden等同于隐藏。fold会折叠在数据行的下面进行显示。
-			"inform":   true,               //是否在修改或新增表单中显示，则为true，false为不显示
+			"inform":   false,               //是否在修改或新增表单中显示，则为true，false为不显示
 			"datatype": "int",              //数据类型,form中的数据类型标志
 			"infilter": true,               //是否在过滤器中显示，则为true，false为不显示
 		},
