@@ -111,7 +111,7 @@ return (function(){
         //设置遮罩层
         var mask = document.createElement('div');
         this.mask_obj = mask;
-        console.log("-------------",this);
+        // console.log("-------------",this);
         mask.className = 'dl-dialogue-mask';
         //生成随机字符串作为mask的id
         var randomId = 'mask_' + Math.random().toString(36).substr(2, 9);
@@ -150,7 +150,6 @@ var dia_move = function(box){
     var bot_left = box.offsetWidth/2;
     box.style.top = `calc(50% - ${bot_top}px)`;
     box.style.left = `calc(50% - ${bot_left}px)`;
-    console.log(box);
 }
 
 //当点击class为dl-dia-btn的按钮时，弹出对应的对话框
@@ -159,7 +158,6 @@ document.addEventListener('DOMContentLoaded', function() {
         btn.addEventListener('click', function(){
            //获取对话框id
            var dia_id = btn.dataset.dia;
-           console.log(dia_id);
            //获取对话框
            var diaobj=dia().domget(dia_id)
            var dia_dom=diaobj.box_obj

@@ -2,7 +2,7 @@
  * @Description:
  * @Date: 2024-05-15 21:04:32
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2024-11-28 22:41:29
+ * @LastEditTime: 2024-11-29 10:14:19
  */
 package main
 
@@ -79,16 +79,19 @@ var exampleData = map[string]any{
 		{
 			"url":  "/user/add", //动作url
 			"name": "添加",        //动作按钮名称
+			"act":  "add",       //动作标识
 			"key":  "id",        //动作按钮的key
 		},
 		{
 			"url":  "/user/edit",
 			"name": "编辑",
+			"act":  "edit",
 			"key":  "id",
 		},
 		{
 			"url":  "/user/delete",
 			"name": "删除",
+			"act":  "delete",
 			"key":  "id",
 		},
 	},

@@ -1,7 +1,7 @@
 /*
  * @Author: lec
  * @Date: 2024-11-27 14:24:21
- * @LastEditTime: 2024-11-28 23:16:52
+ * @LastEditTime: 2024-11-29 10:18:17
  * @Description: autotable,自动表格，载入json数据生成CURD表格
  */
 var autotable={
@@ -162,13 +162,74 @@ var autotable={
                 button.classList.add("dl-btn");
                 button.classList.add("dl-btn-sm");
                 button.innerHTML=action.name;
-                button.addEventListener("click",function(){
+                button.dataset.actid=i;
+                button.dataset.actinfo=j;
+                button.addEventListener("click",function(e){
                     //执行动作
-                    console.log(action);
+                    this.btnaction(e.target);
                 }.bind(this));
                 td.appendChild(button);
             }
         }
+    },
+    //按钮动作相应
+    btnaction:function(thisbtn){
+        var _this=this;
+        var thisrow=_this.data.data[thisbtn.dataset.actid];
+        var thisaction=_this.data.action[thisbtn.dataset.actinfo];
+        console.log(thisrow);
+        console.log(thisaction);
+        //执行动作
+        //delete
+        if(thisaction.act=="delete"){
+            //执行删除动作
+            var thisdia=dia().title('删除').body('确定要删除【'+thisrow[0]+'】吗?')
+                            
+            .setbtn('取消','red',function(){
+                // alert('取消');
+                console.log('取消');
+                this.dia.des();
+            })
+
+            .setbtn('确定','blue',function(){
+                // alert('确定'); 
+                console.log("确定");
+                this.dia.des();
+            })
+            .to();
+            
+        }else if(thisaction.act=="edit"){
+            //执行编辑动作
+            this.setdiaform(thisbtn);
+        }
+
+    },
+    //根据colinfo内容设置对话框表单
+    setdiaform:function(thisbtn){
+        var _this=this;
+        //创建对话框
+
+        var thisrow=_this.data.data[thisbtn.dataset.actid];
+        var thisaction=_this.data.action[thisbtn.dataset.actinfo];
+        //创建表单
+        var form=document.createElement("form");
+        form.classList.add("dl-form");
+        
+        //遍历this.data.colinfo中的数据，创建表单项
+        for(var i=0;i<this.data.colinfo.length;i++){
+            var colinfo=this.data.colinfo[i];
+            var div=document.createElement("div");
+            div.classList.add("dl-form-item");
+            form.appendChild(div);
+            var label=document.createElement("label");
+            label.innerHTML=colinfo.title;
+            div.appendChild(label);
+            var input=document.createElement("input");
+            input.classList.add("dl-form-control");
+            input.placeholder=colinfo.defval;
+            div.appendChild(input);
+        }
+        
     },
     //改变页码
     changePage:function(page){
