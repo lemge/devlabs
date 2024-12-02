@@ -116,10 +116,47 @@ func handleExample(w http.ResponseWriter, r *http.Request) {
 	enc.Encode(exampleData)
 }
 
+var naviinfo = []map[string]any{
+	{
+		"title": "首页",
+		"url":   "/index.html",
+	},
+	{
+		"title": "自动表格",
+		"url":   "/autotable.html",
+	},
+	{
+		"title": "按钮",
+		"url":   "/buttons.html",
+	},
+	{
+		"title": "颜色",
+		"url":   "/color.html",
+	},
+	{
+		"title": "标签",
+		"url":   "/tag.html",
+	},
+	{
+		"title": "表单",
+		"url":   "/form.html",
+	},
+	
+}
+
+//导航信息
+func handleNaviinfo(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+	enc := json.NewEncoder(w)
+	enc.Encode(naviinfo)
+}
+
 func main() {
 	port := "8081"
 	http.Handle("/", http.StripPrefix("/", http.FileServer(http.Dir("../"))))
 	http.HandleFunc("/example", handleExample)
+	http.HandleFunc("/naviinfo", handleNaviinfo)
 	println("Server started on port " + port)
 	println("Visit http://localhost:" + port + " in your browser")
 	http.ListenAndServe(":"+port, nil)
