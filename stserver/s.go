@@ -118,6 +118,9 @@ func handleExample(w http.ResponseWriter, r *http.Request) {
 
 var naviinfo = []map[string]any{
 	{
+		"title": "导航栏",
+	},
+	{
 		"title": "首页",
 		"url":   "/index.html",
 	},
@@ -140,6 +143,8 @@ var naviinfo = []map[string]any{
 	{
 		"title": "表单",
 		"url":   "/form.html",
+		"id":    "test-id",
+		"class": "test-class",
 	},
 	
 }

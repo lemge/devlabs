@@ -1,0 +1,111 @@
+<!--
+ * @Description: 
+ * @Date: 2024-05-17 22:19:13
+ * @LastEditors: lec
+ * @LastEditTime: 2024-05-21 13:44:03
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>导航栏 </title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/ajaxnavi.js"></script>
+</head>
+
+<body class="bg-box">
+    <div class="dl-navi" data-navi-source="/naviinfo"></div>
+    <div>
+
+        <div class="container container-md">
+            <div class=" text-center">
+                <div class="space-20"></div>
+                <h1>导航栏</h1>
+                <div class="space-20"></div>
+            </div>
+
+
+            <div class="dl-navi dl-navi-dark" data-navi-source="/naviinfo"></div>
+
+            <hr>
+            
+            <div class="dl-panel">
+                <div class="dl-panel-body">
+                    <h2>导航栏组件</h2>
+                    <hr>
+                    <p>
+                        此页显示导航栏组件
+                    </p>
+                </div>
+            </div>
+            
+
+            <div class="dl-panel">
+                <div class="dl-panel-body">
+                    <h2>说明</h2>
+                    <hr>
+                    <p>
+                    <ul>
+                        <li>页面载入完成后，自动在class为dl-navi的div中生成导航栏</li>
+                        <li>导航栏数据通过访问div的data-navi-source属性获取url,然后通过ajax获取数据</li>
+                        <li>导航栏基于flex布局</li>
+                        <li>导航栏中的a标签支持id和class属性，以便支持后续js操作，class和id会自动添加到dl-navi-item上，class为追加</li>
+                        <li>导航栏中的a标签支持title属性，以便支持tooltip</li>
+                        <li>导航栏为响应式布局，超过dl-navi这个div的导航item会自动折叠，并且追加展开/折叠按钮</li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+
+            <div class="dl-navi dl-navi-dark" data-navi-source="/naviinfo"></div>
+            <div class="dl-panel">
+                <div class="dl-panel-body">
+                    <h2>导航栏数据格式</h2>
+                    <hr>
+                    <pre>
+[
+
+{
+"title": "首页",
+"url": "/index.html"
+},
+
+{
+"title": "自动表格",
+"url": "/autotable.html"
+},
+
+
+{
+"title": "按钮",
+"url": "/buttons.html"
+},
+
+{
+"title": "颜色",
+"url": "/color.html"
+},
+
+{
+"title": "标签",
+"url": "/tag.html"
+},
+
+{
+"class": "test-class",
+"id": "test-id",
+"title": "表单",
+"url": "/form.html"
+}
+]
+                    </pre>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
