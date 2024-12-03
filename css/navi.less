@@ -4,6 +4,7 @@
     justify-content: space-between;
     // background-color: #f8f9fa;
     background-color: #eeeeee;
+    position: relative;
 
 
     .dl-navi-list {
@@ -12,6 +13,7 @@
         margin: 0;
         display: flex;
         flex-wrap: wrap;
+        overflow: hidden;
     }
 
     .dl-navi-item {
@@ -28,11 +30,39 @@
             }
         }
     }
+    .dl-navi-fold{
+        display: none;
+        position: absolute;
+        right: 10px;
+        top: 5px;
+        padding: 5px 10px;
+        border: 1px solid #999;
+        border-radius: 3px;
+        background-color: transparent;
+        color: #666;
+        cursor: pointer;
+        font-size: 12px;
+        transition: all 0.3s;
+
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        padding: 0;
+        line-height: 30px;
+        font-size: 30px;
+        border:0;
+
+        &:hover {
+            background-color: #ddd;
+            color: #333;
+        }
+    }
 }
 //不同颜色的主题
 .dl-navi-dark{
     background-color: #333333;
     .dl-navi-item{
+
         a{
             color: #ffffff;
             &:hover{

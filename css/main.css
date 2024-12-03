@@ -1689,6 +1689,7 @@ textarea.dl-form-control {
   flex-wrap: wrap;
   justify-content: space-between;
   background-color: #eeeeee;
+  position: relative;
 }
 .dl-navi .dl-navi-list {
   list-style: none;
@@ -1696,6 +1697,7 @@ textarea.dl-form-control {
   margin: 0;
   display: flex;
   flex-wrap: wrap;
+  overflow: hidden;
 }
 .dl-navi .dl-navi-item {
   display: flex;
@@ -1710,6 +1712,31 @@ textarea.dl-form-control {
 .dl-navi .dl-navi-item a:hover {
   color: #ffffff;
   background-color: #333333;
+}
+.dl-navi .dl-navi-fold {
+  display: none;
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  padding: 5px 10px;
+  border: 1px solid #999;
+  border-radius: 3px;
+  background-color: transparent;
+  color: #666;
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.3s;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 0;
+  line-height: 30px;
+  font-size: 30px;
+  border: 0;
+}
+.dl-navi .dl-navi-fold:hover {
+  background-color: #ddd;
+  color: #333;
 }
 .dl-navi-dark {
   background-color: #333333;
