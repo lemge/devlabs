@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
         sidebarBox.appendChild(mask);
         mask.addEventListener('click', (e) => {
             //获取e.target的父级元素    
-            const targetObj = e.target.parentElement.querySelector('.dl-sidebar');
+            const targetObj = e.target.parentElement;
             console.log(targetObj);
             if (targetObj) {
                 sf.switch(targetObj);
@@ -22,12 +22,12 @@ document.addEventListener('DOMContentLoaded', () => {
     foldButtons.forEach(button => {
         button.addEventListener('click', (e) => {
             const targetId = e.target.getAttribute('data-target');
-            const sidebar = document.getElementById(targetId);
+            const sidebarbox = document.getElementById(targetId);
 
 
 
-            if (sidebar) {
-                sf.switch(sidebar);
+            if (sidebarbox) {
+                sf.switch(sidebarbox);
             }
         });
     });
@@ -38,7 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
 var sidebarfunc = {
 
     //切换
-    switch: function (targetObj) {
+    switch: function (boxObj) {
+        var targetObj = boxObj.querySelector('.dl-sidebar');
         console.log(targetObj.offsetWidth);
         if (targetObj.offsetWidth > 0) {
             this.closeFunc(targetObj);
@@ -49,22 +50,16 @@ var sidebarfunc = {
 
     openFunc: function (targetObj) {
         //判断是否是移动端
-        if (window.innerWidth < 768) {
             this.open(targetObj);
             this.maskshow(targetObj.parentElement.querySelector('.dl-sidebar-mask'));
-        } else {
-            this.open(targetObj);
-        }
+        
     },
 
     closeFunc: function (targetObj) {
         //判断是否是移动端
-        if (window.innerWidth < 768) {
             this.close(targetObj);
             this.maskhide(targetObj.parentElement.querySelector('.dl-sidebar-mask'));
-        } else {
-            this.close(targetObj);
-        }
+        
     },
 
     open: function (targetObj) {
