@@ -70,9 +70,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-
-
-
 //调整尺寸，当dl-navi-list的高度大于dl-navi-item的高度时，调整dl-navi-list的高度为dl-navi-item的高度，并显示折叠展开按钮
 var resizeNavi = function(naviElement) {
     console.log('resizeNavi');

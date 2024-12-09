@@ -25,7 +25,7 @@ var exampleData = map[string]any{
 			"width":    50,                 //列宽，如果没有设定就是自适应
 			"func":     "",                 //列的计算公式
 			"show":     "comm/fold/hidden", //列可见性，comm等同于常规显示，fold等同于折叠，hidden等同于隐藏。fold会折叠在数据行的下面进行显示。
-			"inform":   false,               //是否在修改或新增表单中显示，则为true，false为不显示
+			"inform":   false,              //是否在修改或新增表单中显示，则为true，false为不显示
 			"datatype": "int",              //数据类型,form中的数据类型标志
 			"infilter": true,               //是否在过滤器中显示，则为true，false为不显示
 		},
@@ -146,10 +146,68 @@ var naviinfo = []map[string]any{
 		"id":    "test-id",
 		"class": "test-class",
 	},
-	
 }
 
-//导航信息
+var treeinfo = map[string]any{
+	"title": "树形列表", //折叠后标题
+	"type":  "fold", //折叠项
+	"items": []map[string]any{
+		{
+			"title": "目录一",
+			"type":  "item", //item为普通项，fold为折叠项
+			"url":   "#",
+		},
+		{
+			"title": "目录二",
+			"type":  "item",
+			"url":   "#",
+		},
+		{
+			"title": "目录二-1", //折叠后显示的标题
+			"type":  "fold",
+			"items": []map[string]any{
+				{
+					"title": "目录二-1-1",
+					"type":  "item",
+					"url":   "#",
+				},
+				{
+					"title": "目录二-1-2",
+					"type":  "item",
+					"url":   "#",
+				},
+			},
+		},
+		{
+			"title": "目录三",
+			"type":  "item",
+			"url":   "#",
+		},
+		{
+			"title": "目录四-fold",
+			"type":  "fold",
+			"items": []map[string]any{
+				{
+					"title": "目录四-1",
+					"type":  "item",
+					"url":   "#",
+				},
+				{
+					"title": "目录四-2",
+					"type":  "item",
+					"url":   "#",
+				},
+			},
+		},
+		{
+			"title": "目录五",
+			"type":  "item",
+			"url":   "#",
+		},
+	},
+}
+
+// 导航信息
 func handleNaviinfo(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	w.Header().Set("Access-Control-Allow-Origin", "*")
@@ -157,11 +215,19 @@ func handleNaviinfo(w http.ResponseWriter, r *http.Request) {
 	enc.Encode(naviinfo)
 }
 
+func handleTreeinfo(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+	enc := json.NewEncoder(w)
+	enc.Encode(treeinfo)
+}
+
 func main() {
 	port := "8081"
 	http.Handle("/", http.StripPrefix("/", http.FileServer(http.Dir("../"))))
 	http.HandleFunc("/example", handleExample)
 	http.HandleFunc("/naviinfo", handleNaviinfo)
+	http.HandleFunc("/treeinfo", handleTreeinfo)
 	println("Server started on port " + port)
 	println("Visit http://localhost:" + port + " in your browser")
 	http.ListenAndServe(":"+port, nil)
