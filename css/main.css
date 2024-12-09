@@ -1775,19 +1775,18 @@ textarea.dl-form-control {
   width: 1rem;
   text-align: center;
   margin-right: 5px;
-  border: 1px solid #333333;
-  border-radius: 100px;
   display: flex;
   align-content: center;
   justify-content: center;
   line-height: 1rem;
   height: 1rem;
+  font-style: normal;
 }
 .dl-tlist .dl-tlist-fold > a > i:before {
-  content: "+";
+  content: "✚";
 }
 .dl-tlist .dl-tlist-fold.dl-tlist-fold-open > a > i:before {
-  content: "-";
+  content: "━";
 }
 .dl-tlist .dl-tlist-item {
   cursor: pointer;
