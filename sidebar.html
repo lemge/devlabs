@@ -1,0 +1,80 @@
+<!--
+ * @Description: 
+ * @Date: 2024-05-17 22:19:13
+ * @LastEditors: lec
+ * @LastEditTime: 2024-05-21 13:44:03
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>边栏The Sidebar</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/sidebar.js"></script>
+    <script src="js/treelist.js"></script>
+</head>
+
+<body class="bg-box">
+    <div class="dl-sidebar-box">
+        <div class="dl-sidebar" id="sidebar01">
+            <h2>The Sidebar</h2>
+            <hr>
+            <div class="dl-tlist" data-tlist-source="/treeinfo"></div>
+        </div>
+        <div class="dl-sidebar-main">
+
+            <div>
+
+                <div class="container container-md">
+                    <div class=" text-center">
+                        <div class="space-20"></div>
+                        <h1>The Sidebar</h1>
+                        <div class="space-20"></div>
+                    </div>
+                    <hr>
+                    <div>
+                        <button class="dl-sidebar-fold dl-btn dl-btn-blue" data-target="sidebar01">☰</button>
+                    </div>
+                    <div class="dl-panel">
+                        <div class="dl-panel-body">
+                            <h3>说明</h3>
+                            <hr>
+                            <p>
+                                边栏组件，将class的值为dl-sidebar的元素转换为边栏组件。
+                            </p>
+                            <p>边栏组件包裹在class的值为dl-sidebar-box的元素中</p>
+                            <p>主内容区域包裹在class的值为dl-sidebar-main的元素中</p>
+                            <p>
+                                边栏折叠按钮为class的值为dl-sidebar-fold的元素。
+                            </p>
+                            <p>
+                                读取dl-sidebar-fold元素的data-target属性，作为操作的元素id。
+                            </p>
+                        </div>
+
+                    </div>
+                    <div class="dl-panel" style="height: 1200px;">
+                        <div class="dl-panel-header">
+                            <h3>空白</h3>
+                        </div>
+                        <div class="dl-panel-body">
+                            <h3>空白</h3>
+                            <hr>
+                            <p>
+                                空白的dl-panel，可以用来填充内容。，高度为1200px。用来测试滚动。
+                            </p>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

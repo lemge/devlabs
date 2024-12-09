@@ -634,6 +634,10 @@ pre {
 }
 .bg-box {
   background-color: #f4f4f5;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
 }
 .radius {
   border-radius: 4px;
