@@ -1752,6 +1752,19 @@ textarea.dl-form-control {
   color: #333333;
   background-color: #ffffff;
 }
+.dl-navi-light-r {
+  background: transparent;
+}
+.dl-navi-light-r .dl-navi-item a {
+  border-radius: 10px;
+  color: #333333;
+  margin: 10px;
+  border-radius: 100px;
+}
+.dl-navi-light-r .dl-navi-item a:hover {
+  color: #333333;
+  background-color: #dddddd;
+}
 .dl-tlist {
   display: flex;
   flex-direction: column;
