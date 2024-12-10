@@ -1825,6 +1825,67 @@ textarea.dl-form-control {
 .dl-tlist .dl-tlist-item a:hover {
   background-color: #e2e6ea;
 }
+.dl-tlist-light {
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+}
+.dl-tlist-light * {
+  box-sizing: border-box;
+  display: flex;
+}
+.dl-tlist-light .dl-tlist-list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.dl-tlist-light .dl-tlist-item a {
+  display: flex;
+  align-content: center;
+}
+.dl-tlist-light .dl-tlist-item a span {
+  line-height: 1rem;
+}
+.dl-tlist-light .dl-tlist-fold > a > i {
+  width: 1rem;
+  text-align: center;
+  margin-right: 5px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  line-height: 1rem;
+  height: 1rem;
+  font-style: normal;
+}
+.dl-tlist-light .dl-tlist-fold > a > i:before {
+  content: "▶";
+}
+.dl-tlist-light .dl-tlist-fold.dl-tlist-fold-open > a > i:before {
+  content: "▼";
+}
+.dl-tlist-light .dl-tlist-item {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+.dl-tlist-light .dl-tlist-item .dl-tlist-list {
+  margin-left: 10px;
+  border-left: 1px solid #cccccc;
+  padding-left: 10px;
+}
+.dl-tlist-light .dl-tlist-item a {
+  text-decoration: none;
+  transition: background-color 0.3s;
+  color: #000000;
+  padding: 15px;
+  border: 0;
+  border-radius: 10px;
+}
+.dl-tlist-light .dl-tlist-item a:hover {
+  background-color: #e2e6ea;
+}
 .dl-sidebar-box {
   display: flex;
   flex-direction: row;
